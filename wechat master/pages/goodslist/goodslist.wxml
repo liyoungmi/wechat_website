@@ -1,0 +1,225 @@
+
+
+<!--pages/tobuy/tobuy.wxml-->
+<view class='header'>
+  <view class='font-wryh'>
+    <!-- <image class='header-img-back' src='../../img/view/icon_01.png' bindtap='back'></image> -->
+    <view></view> 
+    <!-- <scroll-view class="tui-city-scroll header-text" scroll-x="true" scroll-into-view="NAV{{status}}" scroll-with-animation="true">
+  <text bindtap="getStatus" id="NAV{{index}}" class="tui-nav-li {{index === status ? 'tui-nav-active' : ''}}" data-index="{{index}}" wx:for="{{navList}}" wx:key="">{{item}}</text>
+</scroll-view> -->
+    <view class='header-text'>
+      <text>商品</text>
+      <text>详情</text>
+      <text>说明书</text>
+    </view>
+    <image class='header-img-button' src='../../img/view/icon_02.png' bindtap="clickArea" data-num="1"></image>
+  </view>
+
+
+  <view class='header-alert' hidden="{{view1}}">
+     <image class='alert-triangle' src='../../img/view/sanjiao.png'></image>
+     <view class='alert-text'>  
+     <navigator  bindtap='toprofile'>   
+      <view class='alert-toprofile'>
+        <image src='../../img/view/xx_icon01.png'></image>
+        个人中心
+      </view>
+     </navigator>
+     <navigator  bindtap='toindex'> 
+      <view class='alert-toindex'>
+        <image src='../../img/view/xx_icon02.png'></image>
+        首页
+      </view>
+     </navigator>
+     <navigator  bindtap='toclassify'>  
+      <view class='alert-toclassify'>
+        <image src='../../img/view/xx_icon05.png'></image>
+        分类
+      </view>
+     </navigator>
+     <navigator  url='../search/search'>  
+      <view class='alert-tosearch'>
+        <image src='../../img/view/xx_icon03.png'></image>
+        搜索
+      </view>
+     </navigator>
+      <view class='alert-tocollection'>
+        <image src='../../img/view/xx_icon04.png'></image>
+        收藏
+      </view>
+     </view>
+  </view>
+</view>
+<!-- 商品轮播 -->
+
+<!--列表滚动区  -->
+<!-- <view class="tui-fixed-y">
+  <scroll-view class="tui-city-scroll-y" scroll-y="true" scroll-into-view="NAV{{status}}" scroll-with-animation="true">
+    <view wx:for="{{navList}}" wx:key="">
+      <view id="NAV{{index}}" class="tui-list-head">{{item}}</view>
+    </view>
+  </scroll-view>
+</view>             -->
+
+
+<swiper class='tobuy-swiper' 
+  indicator-dots="{{indicatorDots}}"
+  indicator-color="{{indicatorColor}}"
+  indicator-active-color="{{indicatorActivecolor}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}">
+  <block wx:for="{{tobuyimg}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.tobuyimglist}}" class="slide-image" width="100%"/>
+      </swiper-item>
+  </block>
+</swiper>
+<view class='swiper-text'>
+  <image class='swiper-log' src='../../img/view/cp_sb.png'></image>
+   <view class="ar_content">这是第{{data_ID}}张轮播图名叫{{data_title}}各个国家有各个国家的国歌</view> 
+  <!-- <view>{{swipertext}}</view> -->
+</view>
+<view class='product-description'>
+  <view class='productprice'>
+    <image src='../../img/view/cp_top_bj.png'></image>
+    <view class='price'>
+      <view>
+        康泽价：￥ <text class='big-price'>{{data_price}}这是价格</text>   
+        <!-- 康泽价：￥<text class='big-price'>{{productPrice}}</text> -->
+      </view>
+      <view>
+        市场价：<text class='little-price'>{{data_oldprice}}这是原价</text>  
+        <!-- 市场价:<text class='little-price'>{{productoldPrice}}</text> -->
+      </view>
+    </view>
+  </view>
+  <view class='product-text'>
+    <view class='Specifications'>
+      <view>产品规格：</view>
+      <view class='border'>{{productSpecifications}}<image src='../../img/view/gou.png'></image>
+      </view>
+    </view>
+    <view class='Specifications'>
+      <view>疗程套餐：</view>
+      <view class='border'>{{treatmentPackage}}<image src='../../img/view/gou.png'></image>
+      </view>
+    </view>
+    <view class='Specifications'>
+      <view>购买数量：</view>
+      <!-- 主容器 -->  
+      <view class="stepper">  
+          <!-- 减号 -->  
+          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  
+          <!-- 数值 -->  
+          <input type="number" bindchange="bindManual" value="{{num}}" />  
+          <!-- 加号 -->  
+          <text class="normal" bindtap="bindPlus">+</text> 
+                  
+      </view> 
+      <view class='in-stock'>(库存状态：现在有货)</view>    
+    </view>
+  </view>
+</view>
+<view class='Tips'>
+   <view>温馨提示：</view>
+   <view>1、保健品不能代替药品；</view>
+   <view>2、购买非处方药请按说明书或者在药师指导下购买和使用；</view>
+   <view>3、购买医疗器械请仔细阅读产品说明书或者在医务人员的指导下购买和使用；</view>
+   <view>4、处方药广告仅供医学药学人士阅读；</view>
+   <view>5、禁忌内容或者注意事项请详见说明书。</view>
+   <view>部分商品包装更换频繁，如货品与图片不完全一致。请以收到的商实物为准。（如需协助请拨打<text>400-8678-391</text>)</view>
+   <view class='Tips-img'>
+      <view><image src='../../img/view/sb_icon01.png'></image><view>国家审批</view></view>
+      <view><image src='../../img/view/sb_icon02.png'></image><view>真诚服务</view></view>
+      <view><image src='../../img/view/sb_icon03.png'></image><view>满79包邮</view></view>
+      <view><image src='../../img/view/sb_icon04.png'></image><view>品质保障</view></view>
+   </view>
+</view>
+<view class='more'>
+   <view class='more-text'>更多推荐</view>
+   <view class='swiper-img'>
+      <swiper class='swiper swiperthree'
+        autoplay="{{autoplay}}"
+        interval="{{interval}}"
+        duration="{{duration}}" style='width:30%;'>
+          <block wx:for="{{imgUrl}}" wx:key="{{index}}">
+              <swiper-item>       
+                  <image src="{{item.imgOne}}" class="slide-img" width="30%"/> 
+                  <view class='swiper-textOne'>{{item.textOne}}</view>        
+                  <view class='swiper-price'>
+                    <text>￥{{item.price}}</text>
+                  </view>      
+              </swiper-item>
+          </block>
+      </swiper>
+      <swiper class='swiper swiperthree'
+        autoplay="{{autoplay}}"
+        interval="{{interval}}"
+        duration="{{duration}}" style='width:30%;'>
+          <block wx:for="{{imgUrlOne}}" wx:key="{{index}}">
+              <swiper-item>                 
+                  <image src="{{item.imgTwo}}" class="slide-img" width="30%"/>
+                  <view class='swiper-textOne'>{{item.textTwo}}</view>
+                  <view class='swiper-price'>
+                    <text>￥{{item.price}}</text>
+                  </view>                 
+              </swiper-item>
+          </block>
+      </swiper>
+      <swiper class='swiper swiperthree'
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}" style='width:30%;'>
+          <block wx:for="{{imgUrlTwo}}" wx:key="{{index}}">
+              <swiper-item>                 
+                  <image src="{{item.imgThree}}" class="slide-img" width="30%"/>
+                  <view class='swiper-textOne'>{{item.textThree}}</view>
+                  <view class='swiper-price'>
+                    <text>￥{{item.price}}</text>
+                  </view>                 
+              </swiper-item>
+          </block>
+      </swiper>
+    </view>
+</view>
+<view class='instruction-manual'>
+  <view><text>产品详情</text><text>说明书</text></view>
+  <image src='../../img/150917160621.jpg'></image>
+  <image src='{{data_img}}'></image>
+  <image src='{{data_img}}'></image>
+  <image src='{{data_img}}'></image>
+   图图图图图
+</view>
+
+
+
+
+
+
+<view class="row">
+      <view>
+        <image src='../../img/view/db_icon01.png'></image>
+        <view>收藏</view>
+      </view>
+      <view>
+         <image src='../../img/view/db_icon02.png'></image>
+         <view>购物车</view>
+      </view>
+      <view>
+         <image src='../../img/view/db_icon03.png'></image>
+         <text>在线咨询</text>
+      </view>
+      <view>
+      <navigator url=''>
+        <button class="button-red" bindtap="toBuy" formType="submit">加入购物车</button>
+      </navigator>
+      </view>
+  </view>
+
+
+
+
+
+

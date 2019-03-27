@@ -1,0 +1,108 @@
+<!--pages/communicationCenter/communicationCenter.wxml-->
+<view class="scroll_box"> 
+    <scroll-view class="scroll-view_x"  scroll-x='true' style="width: auto;overflow:hidden;">
+      <view  class="item_list{{item == shopitem?'active':''}}" bindtap='bindshop' data-classify="{{item}}"  wx:for="{{list}}" data-index="{{index}}">
+        {{item}}
+      </view>         
+    </scroll-view>
+  </view>
+<image class='aboutKZ-img' src='../../img/communication/communicateBanner.jpg'></image>
+<!-- 横向滚动联动 -->
+  <view class="detail">
+    <view class="content">
+      <view class="menu-container">
+        <scroll-view scroll-x="true" class="scroll-view" scroll-into-view="head-{{indexSize}}" style="width: auto;overflow:hidden;"> 
+              <view class="scroll-view-item {{indexSize === index?'active':''}}" wx:for="{{classData}}"  wx:for-item="item" wx:key="index" id="head-{{index}}"  bindtap="scrollTo" data-index="{{index}}">
+                  <image src="{{item.image}}" wx:if="{{imgindex==index}}" class="slide-image"></image>
+                  <image src="{{item.clickUrl}}" wx:elif="{{imgindex!=index}}" class="slide-image"></image>                 
+                  <text>{{item.title}}</text>
+              </view>             
+        </scroll-view>
+      </view>
+      
+      <swiper indicator-dots='true' class="detail-container" bndchange="change" data-index="{{index}}" bindchange='onSlideChangeEnd' current="{{indexSize}}"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" style='height: 3250rpx;'>
+        <swiper-item style='postion: absolute;width: 100%;transform: transform(0%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true' style='background-color: #fff;'>
+          <view class='group'>
+            <view class='radio-title'>反馈类型</view>
+            <view>
+             <radio-group class="radio-group" bindchange="radioChange">
+              <label class="radio" wx:for="{{items}}">
+                <radio class="radio" value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}" color='#fff' />{{item.value}}
+              </label>
+            </radio-group>
+            <text class='seleted'>{{seleted}}</text>
+            </view>
+            <view class='radio-text'>（必填）</view>
+          </view>
+          <view class='group'>
+            <view class='radio-title'>内容详情</view>
+            <view class='radio-text'>（必填）</view>
+            <textarea value='' class='input-border'></textarea>
+          </view>
+          <view class='group upload'>
+            <view class='radio-title'>上传图片</view>
+            <view class='radio-text'>（请上传你的图片 格式：jpg,png,bmp,gif）</view>
+          </view>
+          <view class='group'>
+            <view class='radio-title'>手机号</view>
+            <view class='radio-text'>（必填）</view>
+            <input class='phone-input'></input>
+          </view>
+          <button class='submit'>立即提交</button> 
+
+          <view class='other-ways'>
+            <view class='radio-title'>其他通道</view>
+            <view class='arrangement'>
+              <view>
+                 <image src='../../img/communication/contact01.png'></image>
+                 <view class='arrangement-text'>
+                    <view>拨打电话</view>
+                    <text>400-867-8391</text>
+                 </view>
+              </view>
+              <view>
+                 <image src='../../img/communication/contact02.png'></image>
+                 <view class='arrangement-text'>
+                    <view>在线留言</view>
+                    <text>请在上框入内容,提交</text>
+                 </view>
+              </view>
+              <view>
+                 <image src='../../img/communication/contact03.png'></image>
+                 <view class='arrangement-text'>
+                    <view>发短信</view>
+                    <text>177-0192-5620</text>
+                 </view>
+              </view>
+              <view>
+                  <image src='../../img/communication/contact04.png'></image>
+              </view>
+            </view>
+          </view>
+          </scroll-view>
+        </swiper-item>
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(100%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+             <view class='customerService'>
+                <image class='customerService-icons' src='../../img/communication/icons03.png'></image>
+                <text class='customerService-title'>药品订购与用药咨询</text>
+                <view>电话热线：400-8678-391</view>
+              </view>
+              <view class='customerService'>
+                <image class='customerService-icons' src='../../img/communication/icons04.png'></image>
+                <text class='customerService-title'>康泽药业连锁有限公司广州分公司</text>
+                <view>联系地址：广州天河区中山大道西140号华港商务大厦东塔23楼</view>
+              </view>
+              <view class='customerService'>
+                <image class='customerService-icons' src='../../img/communication/icons04.png'></image>
+                <text class='customerService-title'>康泽药业连锁有限公司总部 </text>
+                <view>联系地址：广东省汕头市保税区内E03地块管委会办公大楼6楼613房之一</view>
+              </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>

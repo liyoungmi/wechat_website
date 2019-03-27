@@ -1,0 +1,15 @@
+<!--pages/search/search.wxml-->
+<view class="search-text">
+        <view class='classify-text' bindtap='toclassify'>
+          <image class='oicon_classify' src='../../img/oicon_classify.png'></image>
+          <view class='oicon_class'>分类</view>
+        </view>
+
+        <view class='search-box'>
+          <input class="search-input" placeholder="买药！就来康泽微商城！" value="{{value}}" bindinput="searchInput" />
+          <view class='search-ss'>
+            <image class='search-grass' src='../../img/search.png'></image>
+            <input class="search-button" placeholder="搜索" value="{{value}}" bindinput="searchInput" />
+          </view>
+        </view> 
+  </view>

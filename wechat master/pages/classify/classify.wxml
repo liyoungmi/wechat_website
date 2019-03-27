@@ -1,0 +1,1021 @@
+<!--pages/classify/classify.wxml-->
+  <view class="search-text">
+        <view class='classify-text'>
+          <image class='oicon_classify' src='../../img/oicon_classify.png'></image>
+          <view class='oicon_class'>分类</view>
+        </view>
+        <view class='search-box'>
+          <input class="search-input" placeholder="买药！就来康泽微商城！" value="{{value}}" bindinput="searchInput" />
+          <view class='search-ss'>
+            <image class='search-grass' src='../../img/search.png'></image>
+            <input class="search-button" placeholder="搜索" value="{{value}}" bindinput="searchInput" />
+          </view>
+        </view> 
+  </view>
+  <!-- 分类 -->
+  <!-- 左侧滚动栏 -->
+  <view class="detail">
+    <view class="content">
+      <view class="menu-container">
+        <scroll-view scroll-y="true" class="scroll-view" scroll-into-view="head-{{indexSize}}">
+          <view class="scroll-view-ul">   
+          <block wx:for="{{detail}}" wx:for-item="item" wx:key="index" id="head-{{index}}">
+            <view class='text-style'>
+              <view class="scroll-view-item {{indexSize === index?'active':''}}"   bindtap="scrollTo" data-index="{{index}}">
+                  <image src="{{item.image}}" class="slide-image" />
+                  {{item.title}}
+                  <view class="{{indexSize==index?'active3':''}}"></view>
+                  <text class="{{indexSize==index?'active2':''}}"></text>
+              </view>          
+            </view>
+            </block>
+          </view>
+        </scroll-view>
+      </view>
+
+      <swiper indicator-dots='true' class="detail-container" bindchange='onSlideChangeEnd' b
+      
+      ndchange="change" data-index="{{index}}" current="{{indexSize}}"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}">
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(0%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+          <!-- 神经/精神科 -->
+            <view >
+              <view class='inner' bindtap="tigger" data-num="0">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>神经/精神科</view>
+                </view>
+              </view>
+                <view class="classname" hidden="{{showArr[0]}}">
+                  <button bindtap="opentype" data-url="network/request/request">神经损伤</button>
+                  <button bindtap="opentype" data-url="network/request/request">神经性疼痛</button>
+                  <button bindtap="opentype" data-url="network/request/request">脑血管病</button>
+                  <button bindtap="opentype" data-url="network/request/request">运动神经元病</button>
+                  <button bindtap="opentype" data-url="network/request/request">面瘫</button>
+                  <button bindtap="opentype" data-url="network/request/request">戒烟酒</button>
+                  <button bindtap="opentype" data-url="network/request/request">多动症</button>
+                  <button bindtap="opentype" data-url="network/request/request">健忘症</button>
+                  <button bindtap="opentype" data-url="network/request/request">抑郁症</button>
+                  <button bindtap="opentype" data-url="network/request/request">精神分裂症</button>
+                  <button bindtap="opentype" data-url="network/request/request">焦虑症</button>
+                  <button bindtap="opentype" data-url="network/request/request">狂躁症</button>
+                  <button bindtap="opentype" data-url="network/request/request">舞蹈症</button>
+                  <button bindtap="opentype" data-url="network/request/request">帕金森</button>
+                  <button bindtap="opentype" data-url="network/request/request">老年痴呆症</button>
+                  <button bindtap="opentype" data-url="network/request/request">改善睡眠</button>
+                  <button bindtap="opentype" data-url="network/request/request">肌肉萎缩</button>
+                  <button bindtap="opentype" data-url="network/request/request">神经衰弱</button>
+                  <button bindtap="opentype" data-url="network/request/request">多发性神经炎</button>
+                  <button bindtap="opentype" data-url="network/request/request">偏头痛</button>
+                  <button bindtap="opentype" data-url="network/request/request">癫痫</button>
+                  <button bindtap="opentype" data-url="network/request/request">眩晕症</button>
+              </view>
+            </view>
+            <!-- 器官移植 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="1">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>器官移植</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[1]}}">
+                <button bindtap="opentype" data-url="network/request/request">肾移植</button>
+              </view> 
+            </view>
+            <!-- 肝胆科 -->
+             <view>
+              <view class='inner' bindtap="tigger" data-num="2">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>肝胆科</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[2]}}">
+                <button bindtap="opentype" data-url="network/request/request">胆囊炎</button>
+                <button bindtap="opentype" data-url="network/request/request">丙肝</button>
+                <button bindtap="opentype" data-url="network/request/request">黄疸</button>
+                <button bindtap="opentype" data-url="network/request/request">免疫调节</button>
+                <button bindtap="opentype" data-url="network/request/request">肝气郁结</button>
+                <button bindtap="opentype" data-url="network/request/request">乙肝</button>
+                <button bindtap="opentype" data-url="network/request/request">脂肪肝</button>
+                <button bindtap="opentype" data-url="network/request/request">酒精肝</button>
+                <button bindtap="opentype" data-url="network/request/request">肝纤维化</button>
+                <button bindtap="opentype" data-url="network/request/request">肝硬化</button>
+                <button bindtap="opentype" data-url="network/request/request">肝炎</button>
+                <button bindtap="opentype" data-url="network/request/request">胆结石</button>
+                <button bindtap="opentype" data-url="network/request/request">肝胆湿热</button>
+                <button bindtap="opentype" data-url="network/request/request">保肝护肝</button>
+              </view> 
+            </view>
+          <!-- 心脑血管 -->
+             <view>
+              <view class='inner' bindtap="tigger" data-num="3">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>心脑血管</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[3]}}">
+                <button bindtap="opentype" data-url="network/request/request">低血压</button>
+                <button bindtap="opentype" data-url="network/request/request">肺动脉高压</button>
+                <button bindtap="opentype" data-url="network/request/request">高原反应</button>
+                <button bindtap="opentype" data-url="network/request/request">心肌炎</button>
+                <button bindtap="opentype" data-url="network/request/request">止血</button>
+                <button bindtap="opentype" data-url="network/request/request">血管</button>
+                <button bindtap="opentype" data-url="network/request/request">静脉血栓</button>
+                <button bindtap="opentype" data-url="network/request/request">心律失常</button>
+                <button bindtap="opentype" data-url="network/request/request">心绞痛</button>
+                <button bindtap="opentype" data-url="network/request/request">冠心病</button>
+                <button bindtap="opentype" data-url="network/request/request">周围血管疾病</button>
+                <button bindtap="opentype" data-url="network/request/request">高血脂</button>
+                <button bindtap="opentype" data-url="network/request/request">眩晕症</button>
+                <button bindtap="opentype" data-url="network/request/request">脑血管病</button>
+                <button bindtap="opentype" data-url="network/request/request">脑外伤</button>
+                <button bindtap="opentype" data-url="network/request/request">中风</button>
+                <button bindtap="opentype" data-url="network/request/request">动脉硬化</button>
+                <button bindtap="opentype" data-url="network/request/request">血液疾病</button>
+                <button bindtap="opentype" data-url="network/request/request">高血压</button>
+              </view> 
+            </view>
+            <!-- 男科 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="4">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>男科</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[4]}}">
+                <button bindtap="opentype" data-url="network/request/request">补肾</button>
+                <button bindtap="opentype" data-url="network/request/request">遗精</button>
+                <button bindtap="opentype" data-url="network/request/request">男性不育</button>
+                <button bindtap="opentype" data-url="network/request/request">防脱生发</button>
+                <button bindtap="opentype" data-url="network/request/request">前列腺病</button>
+                <button bindtap="opentype" data-url="network/request/request">性功能障碍</button>
+              </view> 
+            </view>
+            <!-- 肿瘤 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="5">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>肿瘤</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[5]}}">
+                <button bindtap="opentype" data-url="network/request/request">胸膜间皮瘤</button>
+                <button bindtap="opentype" data-url="network/request/request">骨癌</button>
+                <button bindtap="opentype" data-url="network/request/request">增强免疫</button>
+                <button bindtap="opentype" data-url="network/request/request">甲状腺瘤</button>
+                <button bindtap="opentype" data-url="network/request/request">肿瘤止吐</button>
+                <button bindtap="opentype" data-url="network/request/request">光谱抗癌</button>
+                <button bindtap="opentype" data-url="network/request/request">结直肠癌</button>
+                <button bindtap="opentype" data-url="network/request/request">前列腺癌</button>
+                <button bindtap="opentype" data-url="network/request/request">升白细胞</button>
+                <button bindtap="opentype" data-url="network/request/request">器官移植</button>
+                <button bindtap="opentype" data-url="network/request/request">甲状腺瘤</button>
+                <button bindtap="opentype" data-url="network/request/request">器官移植</button>
+                 <button bindtap="opentype" data-url="network/request/request">化疗营养</button>
+                <button bindtap="opentype" data-url="network/request/request">肺癌</button>
+                <button bindtap="opentype" data-url="network/request/request">鼻咽癌</button>
+                <button bindtap="opentype" data-url="network/request/request">胃癌</button>
+                <button bindtap="opentype" data-url="network/request/request">直肠癌</button>
+                <button bindtap="opentype" data-url="network/request/request">食道癌</button>
+                <button bindtap="opentype" data-url="network/request/request">乳腺癌</button>
+                <button bindtap="opentype" data-url="network/request/request">脑癌</button>
+                <button bindtap="opentype" data-url="network/request/request">淋巴癌</button>
+                <button bindtap="opentype" data-url="network/request/request">胰腺癌</button>
+                <button bindtap="opentype" data-url="network/request/request">白血病</button>
+                <button bindtap="opentype" data-url="network/request/request">肾癌</button>
+                <button bindtap="opentype" data-url="network/request/request">卵巢癌</button>
+                <button bindtap="opentype" data-url="network/request/request">子宫肌瘤</button>
+                <button bindtap="opentype" data-url="network/request/request">肿瘤辅助药</button>
+                <button bindtap="opentype" data-url="network/request/request">肝癌</button>
+                <button bindtap="opentype" data-url="network/request/request">中晚期肿瘤</button>
+                <button bindtap="opentype" data-url="network/request/request">其他</button>
+                <button bindtap="opentype" data-url="network/request/request">肿瘤止痛</button>
+              </view> 
+            </view>
+            <!-- 内分泌系统 -->
+             <view>
+              <view class='inner' bindtap="tigger" data-num="6">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>内分泌系统</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[6]}}">
+                <button bindtap="opentype" data-url="network/request/request">低钾血症</button>
+                <button bindtap="opentype" data-url="network/request/request">糖尿病</button>
+                <button bindtap="opentype" data-url="network/request/request">甲亢甲减</button>
+              </view> 
+            </view>
+            <!-- 骨科 -->
+             <view>
+              <view class='inner' bindtap="tigger" data-num="7">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>骨科</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[7]}}">
+                <button bindtap="opentype" data-url="network/request/request">股骨头坏死</button>
+                <button bindtap="opentype" data-url="network/request/request">止痛</button>
+                <button bindtap="opentype" data-url="network/request/request">腰椎盘骨突出</button>
+                <button bindtap="opentype" data-url="network/request/request">外用贴药</button>
+                <button bindtap="opentype" data-url="network/request/request">风湿性类风湿</button>
+                <button bindtap="opentype" data-url="network/request/request">痛风</button>
+                <button bindtap="opentype" data-url="network/request/request">骨质增生</button>
+                <button bindtap="opentype" data-url="network/request/request">骨质疏松</button>
+                <button bindtap="opentype" data-url="network/request/request">关节炎</button>
+                <button bindtap="opentype" data-url="network/request/request">颈椎病</button>
+                <button bindtap="opentype" data-url="network/request/request">腰椎病</button>
+                <button bindtap="opentype" data-url="network/request/request">跌打骨伤</button>
+                <button bindtap="opentype" data-url="network/request/request">肌肉关节痛</button>
+                <button bindtap="opentype" data-url="network/request/request">风湿骨痛</button>
+              </view> 
+            </view>
+            <!-- 呼吸系统 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="8">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>呼吸系统</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[8]}}">
+                <button bindtap="opentype" data-url="network/request/request">扁桃体炎</button>
+                <button bindtap="opentype" data-url="network/request/request">咽喉炎</button>
+                <button bindtap="opentype" data-url="network/request/request">肺气肿</button>
+                <button bindtap="opentype" data-url="network/request/request">支气管</button>
+                <button bindtap="opentype" data-url="network/request/request">化痰止咳类</button>
+                <button bindtap="opentype" data-url="network/request/request">解热镇痛抗感</button>
+                <button bindtap="opentype" data-url="network/request/request">咳嗽</button>
+                <button bindtap="opentype" data-url="network/request/request">哮喘</button>
+                <button bindtap="opentype" data-url="network/request/request">滋肾养肺</button>
+                <button bindtap="opentype" data-url="network/request/request">呼吸道</button>
+                <button bindtap="opentype" data-url="network/request/request">肺结核</button>
+                <button bindtap="opentype" data-url="network/request/request">呼吸道感染</button>
+              </view> 
+            </view>
+            <!-- 五官科 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="9">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>五官科</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[9]}}">
+                <button bindtap="opentype" data-url="network/request/request">耳聋耳鸣</button>
+                <button bindtap="opentype" data-url="network/request/request">五官科内服</button>
+                <button bindtap="opentype" data-url="network/request/request">五官科外用</button>
+                <button bindtap="opentype" data-url="network/request/request">咽喉炎</button>
+                <button bindtap="opentype" data-url="network/request/request">鼻炎鼻窦炎</button>
+                <button bindtap="opentype" data-url="network/request/request">过敏性鼻炎</button>
+                <button bindtap="opentype" data-url="network/request/request">中耳炎</button>
+                <button bindtap="opentype" data-url="network/request/request">牙周炎</button>
+                <button bindtap="opentype" data-url="network/request/request">口腔溃疡</button>
+                <button bindtap="opentype" data-url="network/request/request">牙痛</button>
+                <button bindtap="opentype" data-url="network/request/request">咽炎</button>
+                <button bindtap="opentype" data-url="network/request/request">扁桃体炎</button>
+                <button bindtap="opentype" data-url="network/request/request">牙龈炎</button>
+                <button bindtap="opentype" data-url="network/request/request">鼻炎感染</button>
+                <button bindtap="opentype" data-url="network/request/request">清热解毒</button>
+                <button bindtap="opentype" data-url="network/request/request">视网膜病变</button>
+                <button bindtap="opentype" data-url="network/request/request">白内障</button>
+                <button bindtap="opentype" data-url="network/request/request">青光眼</button>
+                <button bindtap="opentype" data-url="network/request/request">干眼症</button>
+                <button bindtap="opentype" data-url="network/request/request">润眼抗疲劳</button>
+                <button bindtap="opentype" data-url="network/request/request">结膜炎</button>
+                <button bindtap="opentype" data-url="network/request/request">角膜炎</button>
+                <button bindtap="opentype" data-url="network/request/request">抗感染</button>
+                <button bindtap="opentype" data-url="network/request/request">沙眼</button>
+                <button bindtap="opentype" data-url="network/request/request">眼部炎症</button>
+              </view> 
+            </view>
+            <!-- 妇科 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="10">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>妇科</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[10]}}">
+                <button bindtap="opentype" data-url="network/request/request">卵巢疾病</button>
+                <button bindtap="opentype" data-url="network/request/request">子宫肌瘤</button>
+                <button bindtap="opentype" data-url="network/request/request">白带异常</button>
+                <button bindtap="opentype" data-url="network/request/request">黄褐斑</button>
+                <button bindtap="opentype" data-url="network/request/request">绝经</button>
+                <button bindtap="opentype" data-url="network/request/request">孕育科</button>
+                <button bindtap="opentype" data-url="network/request/request">避孕</button>
+                <button bindtap="opentype" data-url="network/request/request">月经不调</button>
+                <button bindtap="opentype" data-url="network/request/request">乳腺增生</button>
+                <button bindtap="opentype" data-url="network/request/request">产后恶露不尽</button>
+                <button bindtap="opentype" data-url="network/request/request">入职短少</button>
+                <button bindtap="opentype" data-url="network/request/request">孕产调理</button>
+                <button bindtap="opentype" data-url="network/request/request">更年期</button>
+                <button bindtap="opentype" data-url="network/request/request">妇科内服</button>
+                <button bindtap="opentype" data-url="network/request/request">妇科外用</button>
+                <button bindtap="opentype" data-url="network/request/request">养气补血</button>
+                <button bindtap="opentype" data-url="network/request/request">益气安神</button>
+                <button bindtap="opentype" data-url="network/request/request">妇科炎症</button>              
+              </view> 
+            </view>
+             <!-- 儿科 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="11">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>儿科</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[11]}}">
+                <button bindtap="opentype" data-url="network/request/request">痱子湿疹</button>
+                <button bindtap="opentype" data-url="network/request/request">孕婴营养</button>
+                <button bindtap="opentype" data-url="network/request/request">维生素</button>
+                <button bindtap="opentype" data-url="network/request/request">矿物质</button>
+                <button bindtap="opentype" data-url="network/request/request">钙铁锌</button>
+                <button bindtap="opentype" data-url="network/request/request">小儿鼻炎</button>
+                <button bindtap="opentype" data-url="network/request/request">消化不良</button>
+                <button bindtap="opentype" data-url="network/request/request">感冒发烧</button>
+                <button bindtap="opentype" data-url="network/request/request">清热解毒</button>
+                <button bindtap="opentype" data-url="network/request/request">小儿腹泻</button>
+                <button bindtap="opentype" data-url="network/request/request">化痰止咳平喘</button>
+                <button bindtap="opentype" data-url="network/request/request">支气管炎</button>
+                <button bindtap="opentype" data-url="network/request/request">佝偻病</button>
+                <button bindtap="opentype" data-url="network/request/request">寄生虫</button>
+                <button bindtap="opentype" data-url="network/request/request">开胃消食</button>
+                <button bindtap="opentype" data-url="network/request/request">小儿急性扁桃体炎</button>
+                <button bindtap="opentype" data-url="network/request/request">自汗盗汗</button>             
+              </view> 
+            </view>
+            <!-- 消化系统 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="12">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>消化系统</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[12]}}">
+                <button bindtap="opentype" data-url="network/request/request">急性肠胃炎</button>
+                <button bindtap="opentype" data-url="network/request/request">胃痛胃胀</button>
+                <button bindtap="opentype" data-url="network/request/request">消化道出血</button>
+                <button bindtap="opentype" data-url="network/request/request">肠胃炎</button>
+                <button bindtap="opentype" data-url="network/request/request">慢性胃炎</button>
+                <button bindtap="opentype" data-url="network/request/request">肠易激综合征</button>
+                <button bindtap="opentype" data-url="network/request/request">克罗思病</button>
+                <button bindtap="opentype" data-url="network/request/request">营养补充</button>
+                <button bindtap="opentype" data-url="network/request/request">腹泻</button>
+                <button bindtap="opentype" data-url="network/request/request">胃肠</button>
+                <button bindtap="opentype" data-url="network/request/request">肛肠外用</button>
+                <button bindtap="opentype" data-url="network/request/request">胃炎胃痛</button>
+                <button bindtap="opentype" data-url="network/request/request">胃溃疡</button>
+                <button bindtap="opentype" data-url="network/request/request">十二指肠溃疡</button>
+                <button bindtap="opentype" data-url="network/request/request">消化不良</button>
+                <button bindtap="opentype" data-url="network/request/request">腹泻腹痛</button>
+                <button bindtap="opentype" data-url="network/request/request">结肠炎</button>
+                <button bindtap="opentype" data-url="network/request/request">反流性食管炎</button>
+                <button bindtap="opentype" data-url="network/request/request">便秘</button>
+                <button bindtap="opentype" data-url="network/request/request">痔疮</button>
+                <button bindtap="opentype" data-url="network/request/request">脾胃虚弱</button>
+                <button bindtap="opentype" data-url="network/request/request">呕吐恶心           气</button>
+                <button bindtap="opentype" data-url="network/request/request">肠炎</button>
+                <button bindtap="opentype" data-url="network/request/request">肛肠</button>
+                <button bindtap="opentype" data-url="network/request/request">健脾益胃</button>
+                <button bindtap="opentype" data-url="network/request/request">脘腹胀痛</button>
+                <button bindtap="opentype" data-url="network/request/request">镇吐</button>
+                <button bindtap="opentype" data-url="network/request/request">止痛</button>
+                <button bindtap="opentype" data-url="network/request/request">消化道溃疡</button>
+                <button bindtap="opentype" data-url="network/request/request">胃脘疼痛</button>
+                <button bindtap="opentype" data-url="network/request/request">蛔虫病</button>                 
+              </view> 
+            </view>
+            <!-- 泌尿生殖类 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="13">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>泌尿生殖类</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[13]}}">
+                <button bindtap="opentype" data-url="network/request/request"> 附睾炎/精囊炎 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 阴囊湿疹 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 尿频尿崩  </button>
+                <button bindtap="opentype" data-url="network/request/request"> 膀胱炎 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 慢性肾功能不全 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 利尿通淋 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 尿路结石 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 肾炎 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 尿路感染 </button>
+              </view> 
+            </view>
+             <!-- 家庭常备 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="14">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>家庭常备</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[14]}}">
+                <button bindtap="opentype" data-url="network/request/request">  外用常备  </button>
+                <button bindtap="opentype" data-url="network/request/request">  消化系统  </button>
+                <button bindtap="opentype" data-url="network/request/request">  眼耳口鼻   </button>
+                <button bindtap="opentype" data-url="network/request/request">  感冒发烧  </button>
+                <button bindtap="opentype" data-url="network/request/request">  基础营养  </button>
+              </view> 
+            </view>
+             <!-- 家庭常备 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="15">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>家庭常备</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[15]}}">
+                <button bindtap="opentype" data-url="network/request/request">  抗生素类  </button>
+              </view> 
+            </view>
+             <!-- 抗感染 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="16">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>抗感染</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[16]}}">
+                <button bindtap="opentype" data-url="network/request/request">抗生素类</button>
+              </view> 
+            </view>
+            <!-- 免疫及造血类 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="17">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>免疫及造血类</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[17]}}">
+                <button bindtap="opentype" data-url="network/request/request"> 白细胞减少症 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 免疫调节 </button>
+              </view> 
+            </view>
+            <!-- 补益类 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="18">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>补益类</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[18]}}">
+                <button bindtap="opentype" data-url="network/request/request">  滋补肝肾  </button>
+                <button bindtap="opentype" data-url="network/request/request">  补气血  </button>
+                <button bindtap="opentype" data-url="network/request/request">   益气养血补肾   </button>
+                <button bindtap="opentype" data-url="network/request/request">   滋阴养血   </button>
+                <button bindtap="opentype" data-url="network/request/request">   健脑补肾   </button>
+                <button bindtap="opentype" data-url="network/request/request">   养心安神   </button>
+                <button bindtap="opentype" data-url="network/request/request">   补血类   </button>
+                <button bindtap="opentype" data-url="network/request/request">   益气养阴   </button>
+                <button bindtap="opentype" data-url="network/request/request">   补气   </button>
+              </view> 
+            </view>
+            <!-- 营养保健 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="19">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>营养保健</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[19]}}">
+                <button bindtap="opentype" data-url="network/request/request">滋补保健</button>
+                <button bindtap="opentype" data-url="network/request/request">补充调节</button>
+                <button bindtap="opentype" data-url="network/request/request">提高免疫力</button>
+              </view> 
+            </view>
+             <!-- 营养保健 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="20">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>营养保健</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[20]}}">
+                <button bindtap="opentype" data-url="network/request/request">滋补保健</button>
+                <button bindtap="opentype" data-url="network/request/request">补充调节</button>
+                <button bindtap="opentype" data-url="network/request/request">提高免疫力</button>
+              </view> 
+            </view>
+             <!-- 其他用药 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="21">
+                <view class='info overflow' bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>其他用药</view>
+                </view>
+              </view>
+            </view>
+             <!-- 维矿补充 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="22">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>维矿补充</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[22]}}">
+                <button bindtap="opentype" data-url="network/request/request"> 补充维生素/矿物质 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 补充维生素 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 白细胞减少症 </button>
+                <button bindtap="opentype" data-url="network/request/request"> 维生素 </button>
+              </view> 
+            </view>
+             <!-- 皮肤性病科 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="23">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>皮肤性病科</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[23]}}">
+                <button bindtap="opentype" data-url="network/request/request">  蛇虫咬伤 </button>
+                <button bindtap="opentype" data-url="network/request/request">  痈疽疔疮   </button>
+                <button bindtap="opentype" data-url="network/request/request">  皮肤外用  </button>
+                <button bindtap="opentype" data-url="network/request/request">  皮炎  </button>
+                <button bindtap="opentype" data-url="network/request/request">   湿疹  </button>
+                <button bindtap="opentype" data-url="network/request/request">   过敏    </button>
+                <button bindtap="opentype" data-url="network/request/request">   牛皮癣   </button>
+                <button bindtap="opentype" data-url="network/request/request">   白癜风   </button>
+                <button bindtap="opentype" data-url="network/request/request">    痤疮    </button>
+                <button bindtap="opentype" data-url="network/request/request">    疤痕    </button>
+                <button bindtap="opentype" data-url="network/request/request">    荨麻疹    </button>
+                <button bindtap="opentype" data-url="network/request/request">    疱疹    </button>
+                <button bindtap="opentype" data-url="network/request/request">    灰指甲    </button>
+                <button bindtap="opentype" data-url="network/request/request">    脱发    </button>
+                <button bindtap="opentype" data-url="network/request/request">    腋臭    </button>
+                <button bindtap="opentype" data-url="network/request/request">    癣症    </button>
+                <button bindtap="opentype" data-url="network/request/request">    疥疮    </button>
+                <button bindtap="opentype" data-url="network/request/request">    烧伤烫伤    </button>
+                <button bindtap="opentype" data-url="network/request/request">    系统性红斑狼疮    </button>
+                <button bindtap="opentype" data-url="network/request/request">    淤血肿痛    </button>
+                <button bindtap="opentype" data-url="network/request/request">    蚊虫叮咬    </button>
+                <button bindtap="opentype" data-url="network/request/request">    皮肤瘙痒    </button>
+                <button bindtap="opentype" data-url="network/request/request">    皮肤感染    </button>
+                <button bindtap="opentype" data-url="network/request/request">    创伤    </button>
+                <button bindtap="opentype" data-url="network/request/request">    性病    </button>
+                <button bindtap="opentype" data-url="network/request/request">     手足皲裂     </button>
+                <button bindtap="opentype" data-url="network/request/request">     疖肿     </button>
+                <button bindtap="opentype" data-url="network/request/request">     鸡眼     </button>
+                <button bindtap="opentype" data-url="network/request/request">      扁平苔癣     </button>
+                <button bindtap="opentype" data-url="network/request/request">     头皮糠疹     </button>
+                <button bindtap="opentype" data-url="network/request/request">     脓疱疮     </button>
+                <button bindtap="opentype" data-url="network/request/request">     毛细血管损伤     </button>
+                <button bindtap="opentype" data-url="network/request/request">     手足癣     </button>
+              </view> 
+            </view>
+
+
+          </scroll-view>
+        </swiper-item>
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(100%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+          <!-- 监测器材 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="24">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>检测器材</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[24]}}">
+              <button bindtap="opentype" data-url="network/request/request">血压计</button>
+              <button bindtap="opentype" data-url="network/request/request"> 血糖仪 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 检测仪器 </button>
+            </view> 
+            </view>
+            <!-- 检测试纸 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="25">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>检测试纸</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[25]}}">
+              <button bindtap="opentype" data-url="network/request/request">血糖试纸</button>
+            </view> 
+            </view>
+            <!-- 康复理疗 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="26">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>检测试纸</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[26]}}">
+                <button bindtap="opentype" data-url="network/request/request"> 电磁治疗仪 </button>
+                <button bindtap="opentype" data-url="network/request/request">  皮肤测试仪  </button>
+                <button bindtap="opentype" data-url="network/request/request">  雾化器  </button>
+                <button bindtap="opentype" data-url="network/request/request">  血氧仪  </button>
+                <button bindtap="opentype" data-url="network/request/request">  理疗产品  </button>
+                <button bindtap="opentype" data-url="network/request/request">  制氧机  </button>
+                <button bindtap="opentype" data-url="network/request/request">  治疗仪器  </button>
+                <button bindtap="opentype" data-url="network/request/request">  康复器材  </button>
+                <button bindtap="opentype" data-url="network/request/request">  护理器材  </button>
+              </view> 
+            </view>
+             <!-- 保健器材 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="27">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>保健器材</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[27]}}">
+                <button bindtap="opentype" data-url="network/request/request">拔罐器</button>
+                <button bindtap="opentype" data-url="network/request/request">按摩器</button>
+                <button bindtap="opentype" data-url="network/request/request">贴膏</button>
+                <button bindtap="opentype" data-url="network/request/request">炙疗贴</button>
+              </view> 
+            </view>
+             <!-- 辅助器材 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="28">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>辅助器材</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[28]}}">
+                <button bindtap="opentype" data-url="network/request/request">轮椅</button>
+                <button bindtap="opentype" data-url="network/request/request">助行器</button>
+              </view> 
+            </view>
+            <!-- 家庭常备器具 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="29">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>家庭常备器具</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[29]}}">
+                <button bindtap="opentype" data-url="network/request/request">退热贴</button>
+                <button bindtap="opentype" data-url="network/request/request">体温计</button>
+                <button bindtap="opentype" data-url="network/request/request">防护用品</button>
+                <button bindtap="opentype" data-url="network/request/request">外用贴剂</button>
+                <button bindtap="opentype" data-url="network/request/request">卫生材料</button>
+              </view> 
+            </view>
+             <!-- 计生用品 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="30">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>计生用品</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[30]}}">
+                <button bindtap="opentype" data-url="network/request/request">避孕套</button>
+                <button bindtap="opentype" data-url="network/request/request">排卵/验孕</button>
+                <button bindtap="opentype" data-url="network/request/request">验孕棒</button>
+              </view> 
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <!-- 传统滋补 -->
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(200%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+          <!-- 参茸贵细 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="31">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>参茸贵细</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[31]}}">
+              <button bindtap="opentype" data-url="network/request/request">人参</button>
+              <button bindtap="opentype" data-url="network/request/request"> 海马 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 西洋参 </button>
+              <button bindtap="opentype" data-url="network/request/request">  高丽红参  </button>
+              <button bindtap="opentype" data-url="network/request/request"> 冬虫夏草 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 燕窝 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 鹿茸 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 石斛 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 雪蛤 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 灵芝 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 鱼胶 </button>
+            </view> 
+            </view>
+            <!-- 中药饮片 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="32">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>中药饮片</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[32]}}">
+              <button bindtap="opentype" data-url="network/request/request">其他</button>
+              <button bindtap="opentype" data-url="network/request/request">桂圆肉</button>
+              <button bindtap="opentype" data-url="network/request/request">天麻</button>
+              <button bindtap="opentype" data-url="network/request/request">肉苁蓉</button>
+              <button bindtap="opentype" data-url="network/request/request">芡实</button>
+              <button bindtap="opentype" data-url="network/request/request">决明子</button>
+              <button bindtap="opentype" data-url="network/request/request">绞股蓝</button>
+              <button bindtap="opentype" data-url="network/request/request">玉竹</button>
+              <button bindtap="opentype" data-url="network/request/request">麦冬</button>
+              <button bindtap="opentype" data-url="network/request/request">南杏仁</button>
+              <button bindtap="opentype" data-url="network/request/request">山楂</button>
+              <button bindtap="opentype" data-url="network/request/request">巴戟天</button>
+              <button bindtap="opentype" data-url="network/request/request">丹参</button>
+              <button bindtap="opentype" data-url="network/request/request">红莲子</button>
+              <button bindtap="opentype" data-url="network/request/request">黄芪</button>
+              <button bindtap="opentype" data-url="network/request/request">川穹</button>
+              <button bindtap="opentype" data-url="network/request/request">续断</button>
+              <button bindtap="opentype" data-url="network/request/request">杜仲</button>
+              <button bindtap="opentype" data-url="network/request/request">生地</button>
+              <button bindtap="opentype" data-url="network/request/request">当归</button>
+              <button bindtap="opentype" data-url="network/request/request">红芪</button>
+              <button bindtap="opentype" data-url="network/request/request">何首乌</button>
+              <button bindtap="opentype" data-url="network/request/request">三七</button>
+              <button bindtap="opentype" data-url="network/request/request">玛咖</button>
+              <button bindtap="opentype" data-url="network/request/request">甘草</button>
+              <button bindtap="opentype" data-url="network/request/request">茯苓</button>
+              <button bindtap="opentype" data-url="network/request/request">山药</button>
+              <button bindtap="opentype" data-url="network/request/request">薏苡仁</button>
+              <button bindtap="opentype" data-url="network/request/request">桂皮</button>
+            </view> 
+            </view>
+            <!-- 药食汤料 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="33">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>药食汤料</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[33]}}">
+                <button bindtap="opentype" data-url="network/request/request"> 虫草花 </button>
+                <button bindtap="opentype" data-url="network/request/request">  莲子  </button>
+                <button bindtap="opentype" data-url="network/request/request">  海底椰  </button>
+                <button bindtap="opentype" data-url="network/request/request">  无花果  </button>
+                <button bindtap="opentype" data-url="network/request/request">  银耳  </button>
+                <button bindtap="opentype" data-url="network/request/request">  菇  </button>
+                <button bindtap="opentype" data-url="network/request/request">  黄芪  </button>
+                <button bindtap="opentype" data-url="network/request/request">  党参  </button>
+                <button bindtap="opentype" data-url="network/request/request">  当归  </button>
+                <button bindtap="opentype" data-url="network/request/request">  太子参  </button>
+                <button bindtap="opentype" data-url="network/request/request">  沙参  </button>
+                <button bindtap="opentype" data-url="network/request/request">  枸杞  </button>
+                <button bindtap="opentype" data-url="network/request/request">  红枣  </button>
+                <button bindtap="opentype" data-url="network/request/request">  八角  </button>
+              </view> 
+            </view>
+             <!-- 花茶 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="34">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>花茶</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[34]}}">
+                <button bindtap="opentype" data-url="network/request/request">菊花</button>
+                <button bindtap="opentype" data-url="network/request/request">山楂</button>
+                <button bindtap="opentype" data-url="network/request/request">莲子心</button>
+                <button bindtap="opentype" data-url="network/request/request">桂花</button>
+                <button bindtap="opentype" data-url="network/request/request">柠檬</button>
+                <button bindtap="opentype" data-url="network/request/request">月季花</button>
+                <button bindtap="opentype" data-url="network/request/request">玫瑰花</button>
+                <button bindtap="opentype" data-url="network/request/request">蜂蜜</button>
+                <button bindtap="opentype" data-url="network/request/request">紫罗兰</button>
+                <button bindtap="opentype" data-url="network/request/request">甜叶菊</button>
+                <button bindtap="opentype" data-url="network/request/request">柠檬片</button>
+                <button bindtap="opentype" data-url="network/request/request">佛手</button>
+                <button bindtap="opentype" data-url="network/request/request">茉莉花</button>
+                <button bindtap="opentype" data-url="network/request/request">大麦茶</button>
+                <button bindtap="opentype" data-url="network/request/request">百合</button>
+                <button bindtap="opentype" data-url="network/request/request">金银花</button>
+                <button bindtap="opentype" data-url="network/request/request">陈皮</button>
+              </view> 
+            </view>
+          </scroll-view>
+        </swiper-item>
+          <!-- 计生用品 -->
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(300%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="35">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>避孕套</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="36">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>验孕/排卵</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="37">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>润滑/延时</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="38">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>女用情趣</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="39">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>男用情趣</view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+         <!-- 保健品 -->
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(400%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+          <!-- 大众保健 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="40">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>大众保健</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[40]}}">
+              <button bindtap="opentype" data-url="network/request/request">清咽</button>
+              <button bindtap="opentype" data-url="network/request/request"> 清火明目 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 基础营养 </button>
+              <button bindtap="opentype" data-url="network/request/request">  改善睡眠  </button>
+              <button bindtap="opentype" data-url="network/request/request"> 增强免疫力 </button>
+              <button bindtap="opentype" data-url="network/request/request"> 抗疲劳 </button>
+            </view> 
+            </view>
+            <!-- 维矿物质 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="41">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>维矿物质</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[41]}}">
+              <button bindtap="opentype" data-url="network/request/request">维生素C</button>
+              <button bindtap="opentype" data-url="network/request/request">维生素B</button>
+              <button bindtap="opentype" data-url="network/request/request">维生素E</button>
+              <button bindtap="opentype" data-url="network/request/request">补钙类</button>
+              <button bindtap="opentype" data-url="network/request/request">补铁类</button>
+              <button bindtap="opentype" data-url="network/request/request">复合维生素</button>
+              <button bindtap="opentype" data-url="network/request/request">复合钙铁锌（硒）</button>
+              <button bindtap="opentype" data-url="network/request/request">维生素K2</button>
+            </view> 
+            </view>
+            <!-- 男士保健 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="42">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>男士保健</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[42]}}">
+                <button bindtap="opentype" data-url="network/request/request"> 护肝 </button>
+                <button bindtap="opentype" data-url="network/request/request">  补肾强身  </button>
+                <button bindtap="opentype" data-url="network/request/request">  前列腺养护  </button>
+                <button bindtap="opentype" data-url="network/request/request">  解酒护肝养胃  </button>
+              </view> 
+            </view>
+             <!-- 女士保健 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="43">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>女士保健</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[43]}}">
+                <button bindtap="opentype" data-url="network/request/request">母婴保健 </button>
+                <button bindtap="opentype" data-url="network/request/request">减肥瘦身</button>
+                <button bindtap="opentype" data-url="network/request/request">延缓衰老</button>
+                <button bindtap="opentype" data-url="network/request/request">滋阴补血</button>
+                <button bindtap="opentype" data-url="network/request/request">美白祛斑</button>
+                <button bindtap="opentype" data-url="network/request/request">调节内分泌</button>
+                <button bindtap="opentype" data-url="network/request/request">丰胸美体</button>
+                <button bindtap="opentype" data-url="network/request/request">滋阴补肾</button>
+              </view> 
+            </view>
+            <!-- 儿童保健 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="44">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>儿童保健</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[44]}}">
+                <button bindtap="opentype" data-url="network/request/request">补充维生素/矿物质 </button>
+                <button bindtap="opentype" data-url="network/request/request">健脑益智</button>
+                <button bindtap="opentype" data-url="network/request/request">提高免疫力</button>
+                <button bindtap="opentype" data-url="network/request/request">保护视力</button>
+                <button bindtap="opentype" data-url="network/request/request">促进骨骼生长</button>
+              </view> 
+            </view>
+            <!-- 中老年保健 -->
+            <view>
+              <view class='inner' bindtap="tigger" data-num="45">
+                <view class='info overflow'>
+                  <view class='info-subtitle overflow'>中老年保健</view>
+                </view>
+              </view>
+              <view class="classname" hidden="{{showArr[45]}}">
+                <button bindtap="opentype" data-url="network/request/request">增强免疫力 </button>
+                <button bindtap="opentype" data-url="network/request/request">调节三高</button>
+                <button bindtap="opentype" data-url="network/request/request">改善睡眠</button>
+                <button bindtap="opentype" data-url="network/request/request">润肠通便</button>
+                <button bindtap="opentype" data-url="network/request/request">骨骼关节养护</button>
+              </view> 
+            </view>
+          </scroll-view>
+        </swiper-item>
+         <!-- 日用品 -->
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(500%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="46">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>个人护理</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="47">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>儿童用品</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="48">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>家居用品</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="49">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>女性用品</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="50">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>外用常备</view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+         <!-- 食品 -->
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(600%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="51">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>软糖</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="52">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>红糖姜茶</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="53">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>蜂蜜</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="54">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>蛇舌草晶</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="55">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>蜜枣</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="56">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>糖果</view>
+                </view>
+              </view>
+            </view>
+            <view>
+              <view class='inner' bindtap="tigger" data-num="57">
+                <view class='info overflow'  bindtap="opentype" data-url="network/request/request">
+                  <view class='info-subtitle overflow'>阿胶糕</view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>

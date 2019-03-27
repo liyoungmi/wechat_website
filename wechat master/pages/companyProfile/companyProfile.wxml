@@ -1,0 +1,58 @@
+<!--pages/companyProfile/companyProfile.wxml-->
+<view class="scroll_box"> 
+    <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;">
+      <view  class="item_list{{item == shopitem?'active':''}}" bindtap='bindshop' data-classify="{{item}}"  wx:for="{{list}}" data-index="{{index}}">
+        {{item}}
+      </view>     
+    </scroll-view>
+  </view>
+  <!-- 新闻要报 -->
+<view class='container'>
+   <image src='../../img/banner.jpg' class='container-img'></image>
+   <view class='news'>
+    <view class='news-title'>
+      <image src='../../img/company/oicon_01_03.png' class='new-icon icon'></image>
+      <text>新闻要报</text>
+      <image src='../../img/company/oicon_01_10.png' class='turn-right'></image>
+    </view>
+    <view class='news-text'>
+      <image src='../../img/new_01.jpg'></image>
+      <view class='news-list'>
+        <view>
+          <image src='../../img/company/oicon_01_19.png'></image>
+          <text>"2016—2017年度中国药品零售企业综合竞争力排行榜"隆重揭晓！</text>
+        </view>
+        <view>
+          <image src='../../img/company/oicon_01_19.png'></image>
+          <text>康泽药业布局医药电商平台 扩张转板两不误</text>
+        </view>
+        <view>
+          <image src='../../img/company/oicon_01_19.png'></image>
+          <text>康泽药业猛攻电子商务，意欲何为？</text>
+        </view>
+        <view>
+          <image src='../../img/company/oicon_01_19.png'></image>
+          <text>惠普生与广东康泽药业连锁达成2017年战略合作</text>
+        </view>
+      </view>
+    </view>
+   </view>
+   <!-- 良济堂专区 -->
+   <view class='liangjitan'>
+    <view class='news-title'>
+      <image src='../../img/company/oicon_01_06.png' class='liangjitan-icon icon'></image>
+      <text>良济堂专区</text>
+      <image src='../../img/company/oicon_01_10.png' class='turn-right'></image>
+    </view>
+    <image src='../../img/brand_01.jpg'></image>
+   </view>
+  <!-- 视频 -->
+   <view class='video'>
+    <view class='news-title'>
+      <image src='../../img/company/oicon_01_15.png' class='video icon'></image>
+      <text>视频</text>
+      <image src='../../img/company/oicon_01_10.png' class='turn-right'></image>
+    </view>
+    <image src='../../img/brand_01.jpg'></image>
+   </view>
+</view>

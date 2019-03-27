@@ -1,0 +1,60 @@
+/* pages/forget/forget.wxss */
+page{
+  background-color: #f1f2f6;
+}
+.password{
+  height: 80rpx;
+  width: 88%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+  margin-top: 50rpx;
+}
+.password>view{
+  font-size: 32rpx;
+  padding-right: 40rpx;
+}
+.password>input{
+  font-size: 28rpx;
+  color: #a9a9a9;
+}
+#canvas{
+  height: 80rpx;
+  width: 280rpx;
+  margin-left: 30rpx;
+}
+.get-code{
+  width: 280rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  background-color: #e4e4e4;
+}
+.verification-code{
+  height: 80rpx;
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.verification-code>input{
+  width: 50%;
+  background-color: #fff;
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #a9a9a9;
+  padding-left: 20rpx;
+}
+.last{
+  width: 94%;
+  height: 80rpx;
+  background-color: #0096ff;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  color: #fff;
+}

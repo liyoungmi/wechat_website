@@ -1,0 +1,90 @@
+/* pages/companyProfile/companyProfile.wxss */
+.scroll_box{
+width: 100%;
+height: 100rpx;
+overflow: hidden;
+background: #1d2087;
+white-space: nowrap;
+position: fixed;
+top: 0;
+}
+.item_list{
+width: 160rpx;
+height: 100rpx;
+text-align: center;
+line-height: 100rpx;
+margin-right: 23rpx;
+color: #fff;
+display: inline-block;
+}
+.item_listactive{
+  width: 160rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin-right: 23rpx;
+  color: #ffff00;
+  display: inline-block;
+}
+.container{
+  margin-top: 100rpx;
+}
+.container-img{
+  width: 100%;
+  height: 300rpx;
+}
+.news-title{
+  height: 80rpx;
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.news-title>text{
+    position: absolute;
+    left: 100rpx;
+}
+.news-title>image{
+  height: 63rpx;
+  width: 63rpx;
+}
+.news-title>.icon{
+  margin-left: 30rpx;
+}
+.news-title>.turn-right{
+  margin-right: 10rpx;
+}
+.news-text{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+.news-text>image{
+   height: 260rpx;
+   width: 550rpx;
+   margin: 10rpx 20rpx;
+}
+.news-list{
+  width: 550rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.news-list>view{
+  border-bottom: 1px solid #e0e0e0;
+  height: 65rpx;
+}
+.news-list image{
+  height: 45rpx;
+  width: 45rpx;
+}
+.liangjitan>image{
+  height: 300rpx;
+  width: 100%;
+}
+.video>image{
+  height: 600rpx;
+  width: 100%;
+}

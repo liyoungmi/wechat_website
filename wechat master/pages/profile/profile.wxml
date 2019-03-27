@@ -1,0 +1,57 @@
+<!--pages/profile/profile.wxml-->
+<view class='header'>
+  <view class='header-back'>
+    <image src='../../img/view/icon_01.png'></image>
+    <view>返回</view>
+  </view>
+  <view>用户登录</view>  
+  <navigator url='/pages/index/index'>
+    <image class='toindex' src='../../img/home.png'></image> 
+  </navigator>
+</view>
+<view class='information'>
+  <view class='username input'>
+    <image src='../../images/UserName.png'></image>
+    <input placeholder='登录账号/手机号码'></input>
+  </view>
+  <view class='password input'>
+    <image src='../../images/PassWord.png'></image>
+    <input placeholder='密码' password="true"></input>
+  </view>
+</view>
+<view class='log'>
+  <button class='log-button'>登录</button>
+  <view class='registered'>
+  <navigator url='/pages/registered/registered'>
+    <text>立即注册>></text>
+  </navigator>
+  <navigator url='/pages/forget/forget'>
+    <text>忘记密码?</text>
+  </navigator>
+  </view>
+</view>
+<view class='other'>
+  <view class='cell-phone'>
+    <image src='../../images/cellphone.png'></image>
+    <text>400-8678-391</text>
+  </view>
+  <view class='text-list'>
+    <view>
+      <text>正</text>
+      正品保障
+    </view>
+    <view>
+      <text>隐</text>
+      隐私配送
+    </view>
+    <view>
+      <text>专</text>
+      专业药师
+    </view>
+    <view>
+      <text>付</text>
+      货到付款
+    </view>
+  </view>
+  <view class='copyright'>copyright ©2013-2016 康泽大药房 版权所有</view>
+</view>

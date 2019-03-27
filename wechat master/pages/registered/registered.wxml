@@ -1,0 +1,68 @@
+<!--pages/registered/registered.wxml-->
+<view class='header'>
+  <view class='header-back'>
+    <image src='../../img/view/icon_01.png'></image>
+    <view>返回</view>
+  </view>
+  <view>用户登录</view>  
+  <navigator url='/pages/index/index'>
+    <image class='toindex' src='../../img/home.png'></image> 
+  </navigator>
+</view>
+<view class='information'>
+  <view class='username input'>
+    <image src='../../images/1 Phone.png'></image>
+    <input placeholder='手机号码'></input>
+  </view>
+  <view class='password input'>
+    <image></image>
+    <input placeholder='请输入密码'></input>
+  </view>
+  <view class='passwordagan input'>
+    <image></image>
+    <input placeholder='请再次输入密码'></input>
+  </view>
+  <view class='verification-code'>
+    <input placeholder='输入图片验证码'></input>
+    <canvas style="width:{{cvs.width}};height:{{cvs.height}};border-radius：{{cvs.radius}}" id='canvas' canvas-id="canvas"></canvas>
+  </view>
+  <view class='verification-code'>
+    <input placeholder='手机验证码'></input>
+    <button class='get-code'>获取验证码</button>
+  </view>
+  <button>马上验证</button>
+  <view class='information-text'>注册视为同意康泽药业网上药店服务协议隐私声明</view>
+  <navigator url='/pages/profile/profile'>
+    <view class='information-text blue'>已有账号，去登录>></view>
+  </navigator>
+</view>
+<view class='other'>
+  <view class='cell-phone'>
+    <image src='../../images/cellphone.png'></image>
+    <text>400-8678-391</text>
+  </view>
+  <view class='cell-phone WeChat'>
+    <image src='../../images/wxlogo.png'></image>
+    <text>微信下单专享1元限时特惠</text>
+  </view>
+  <view class='text-list'>
+    <view>
+      <text>正</text>
+      正品保障
+    </view>
+    <view>
+      <text>隐</text>
+      隐私配送
+    </view>
+    <view>
+      <text>专</text>
+      专业药师
+    </view>
+    <view>
+      <text>付</text>
+      货到付款
+    </view>
+  </view>
+  <view class='copyright'>copyright ©2013-2016 康泽大药房 版权所有</view>
+</view>
+

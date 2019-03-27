@@ -1,0 +1,247 @@
+/**index.wxss**/
+@import "../../app.wxss";
+
+.swiper {
+    height: 421.5rpx;
+    width: 100%;
+    margin-top: 100rpx;
+}
+.swiper-img>.swiperthree{
+  margin-top: -1rpx;
+}
+swiper-item image {
+    width: 100%;
+    /* height: 100%; */
+}
+.nav-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.nav-img{
+  width: 85rpx;
+  height: 85rpx;
+  margin: 0 19rpx;
+}
+.nav{
+  background-color: #fff;
+  margin-top: 40rpx;
+  padding-bottom: 60rpx;
+}
+.nav-list view{
+  color: #85868b;
+  font-size: 24rpx;
+  text-align: center;
+}
+.nav-list navigator{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 50rpx 0 auto 55rpx;
+}
+.time-countDown{
+  margin-bottom: 30rpx;
+}
+.time-offer{
+  font-size: 26rpx;
+  text-align: center;
+  color: #85858d;
+  margin: 20rpx auto;
+}
+.time-offer>text{
+  color: #ff0100;
+  margin-right: 10rpx;
+}
+.countDownTimeView{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 26rpx;
+  color: #85858d;
+}
+.voteText{
+  width: 35rpx;
+  height: 40rpx;
+  background-color: #484b54;
+  border-radius: 5rpx;
+  text-align: center;
+  color: #fff;
+}
+.voteText-red{
+  background-color: #fe0000;
+}
+.swiper-img{
+  display: flex;
+  flex-direction: row;
+}
+.swiper-img>swiper{
+  margin-left: 18rpx;
+}
+.slide-img{
+  height: 300rpx;
+}
+.swiper swiper-item{
+  background-color: #fff;
+}
+.swiper-price text:nth-of-type(1){
+  color: #ff0000;
+  font-size: 36rpx;
+}
+.swiper-price text:nth-of-type(2){
+  color: #85858d;
+  font-size: 22rpx;
+   text-decoration:line-through; 
+}
+.swiper-textOne{
+  color: #85858d;
+  font-size: 30rpx;
+}
+.health-lecture{
+  text-align: center;
+  font-size: 18rpx;
+  color: #b3b3b3;
+  margin-top: 40rpx;
+}
+.health-lecture>view{
+  text-align: center;
+  font-size: 32rpx;
+  color: #a5f516;
+}
+.health-lecture>image{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.depart-ment{
+  text-align: center;
+  font-size: 18rpx;
+  color: #b3b3b3;
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.depart-ment>view{
+  text-align: center;
+  font-size: 32rpx;
+  color: #ff1d3a;
+}
+.depart{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.depart-images{
+  width: 350rpx;
+  height: 150rpx;
+  margin: 10rpx 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.depart-images>view{
+  width: 200rpx;
+  font-size: 18rpx;
+}
+.depart-images image{
+  width: 100rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+.depart-color01{
+  background-color: #c8ecf8;
+}
+.depart-color01>view{
+  color: #249cdb;
+}
+.depart-color02{
+  background-color: #feefb6;
+}
+.depart-color02>view{
+  color: #ee8e06;
+}
+.depart-color03{
+  background-color: #bfdaf7;
+}
+.depart-color03>view{
+  color: #2e75ab;
+}
+.depart-color04{
+  background-color: #b3f0f1;
+}
+.depart-color04>view{
+  color: #049c90;
+}
+.depart-color05{
+  background-color: #c0e6f9;
+}
+.depart-color05>view{
+  color: #048dc4;
+}
+.depart-color06{
+  background-color: #fce8cf;
+}
+.depart-color06>view{
+  color: #ec761c;
+}
+.depart-images .depart-text{
+  font-size: 26rpx;
+}
+.hot-text{
+  text-align: center;
+  font-size: 18rpx;
+  color: #b3b3b3;
+  margin-top: 40rpx;
+}
+.hot-text>view{
+  text-align: center;
+  font-size: 32rpx;
+  color: #ca1945;
+}
+.hot-text>image{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.hotGoods-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.hotGoods{
+  width: 350rpx;
+  height: 400rpx;
+  background-color: #fff;
+  color: #b3b3b3;
+  margin: 20rpx 0 0 20rpx;
+}
+.hotGoods-list image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 25rpx;
+}
+.hotGoods>.hotGoods-text{
+  color: #000;
+  font-size: 30rpx;
+}
+.hotGoods-text>text{
+  color: #b3b3b3;
+  font-size: 20rpx;
+  text-decoration:line-through;
+}
+.hotGoods>view{
+  font-size: 22rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
+.hotGoods-other{
+  margin-bottom: 20rpx;
+}
+.container{
+  position: relative;
+}
+.icon-advisory{
+  height: 100rpx;
+  width: 100rpx;
+  position: fixed;
+  left: 0;
+  top: 50%;
+}

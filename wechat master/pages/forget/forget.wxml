@@ -1,0 +1,14 @@
+<!--pages/forget/forget.wxml-->
+<view class='password'>
+  <view>账号名</view>
+  <input placeholder='请输入手机号'></input>
+</view>
+<view class='verification-code'>
+    <input placeholder='输入图片验证码'></input>
+    <canvas style="width:{{cvs.width}};height:{{cvs.height}};border-radius：{{cvs.radius}}" id='canvas' canvas-id="canvas"></canvas>
+  </view>
+  <view class='verification-code'>
+    <input placeholder='手机验证码'></input>
+    <button class='get-code'>获取验证码</button>
+  </view>
+<button class='last'>下一步</button>

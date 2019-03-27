@@ -1,0 +1,348 @@
+<!--pages/newsCenter/newsCenter.wxml-->
+<view class="scroll_box"> 
+    <scroll-view class="scroll-view_x"  scroll-x='true' style="width: auto;overflow:hidden;">
+      <view  class="item_list{{item == shopitem?'active':''}}" bindtap='bindshop' data-classify="{{item}}"  wx:for="{{list}}" data-index="{{index}}">
+        {{item}}
+      </view>         
+    </scroll-view>
+  </view>
+  <image class='aboutKZ-img' src='../../img/newsCenter/newsBanner.jpg'></image>
+
+<!-- 横向滚动联动 -->
+  <view class="detail">
+    <view class="content">
+      <view class="menu-container">
+        <scroll-view scroll-x="true" class="scroll-view" scroll-into-view="head-{{indexSize}}" style="width: auto;overflow:hidden;"> 
+              <view class="scroll-view-item {{indexSize === index?'active':''}}" wx:for="{{classData}}"  wx:for-item="item" wx:key="index" id="head-{{index}}"  bindtap="scrollTo" data-index="{{index}}">
+                  <image src="{{item.clickUrl}}" wx:if="{{imgindex!=index}}" class="slide-image"></image>
+                  <image src="{{item.image}}" wx:elif="{{imgindex==index}}" class="slide-image"></image>
+                  <text>{{item.title}}</text>
+              </view>             
+        </scroll-view>
+      </view>
+      
+      <swiper indicator-dots='true' class="detail-container" bndchange="change" data-index="{{index}}" bindchange='onSlideChangeEnd' current="{{indexSize}}"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" style='height: 1600rpx;'>
+        <swiper-item style='postion: absolute;width: 100%;transform: transform(0%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+            <view class='company-news'>
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>20</text>  
+                  <text class='data-year'>2017.11</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业：品牌药品的“搬运工”</view>
+                  <view class='news-text'>【康泽药业：品牌药品的“搬运工”】有那么一段时间，用于治疗甲状腺功能减退症的“优甲乐”药品出现了全国范围断货，广东肇庆的32岁“甲减”(甲状腺功能减退)王某在各大医院药房寻药未果的情况下，抱着试试看的心态，登录了“康泽大药房”微商城，让他万万没想到的是，他竟只用了不到5分钟的时间就顺利完成了对每日必服的“优甲乐”订购。（上海证券报）</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>10</text>  
+                  <text class='data-year'>2017.10</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>粤东连锁管理中心内训师分享交流会暨聘任仪式活动报道</view>
+                  <view class='news-text'>2017 年 10 月 10 日下午 ，在公司培训室举行了粤东连锁管理中心内训师分享交流会暨聘书颁发仪式。粤东连锁管理中心内训师队伍自成立以来，成绩斐然，广受肯定。会上，四位优秀内训师代表分享了各自的成长历程和心得体会。从如何克服登上讲台时心跳加速 、双腿颤抖等紧张情绪 ，到如何备课、如何用通俗易懂的语言将专业知识表达出来，让员工容易理解；同时领悟到作为培训师要善于学习、不断丰富自己的专业知识，才能分享给团队其他成员……内训师在做好本职工作之外 ， 利用业余时间学习、备课是辛苦的，但能够分享专业知识给其他员工、带动团队共同进步提升业绩 ，这种付出非常值得。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>27</text>  
+                  <text class='data-year'>2017.09</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>热烈庆祝康泽药业连锁有限公司粤东总部基地项目启动仪式隆重举行</view>
+                  <view class='news-text'>今天（9月27日）上午，康泽药业连锁有限公司粤东总部基地项目启动仪式在汕头市保税区基地项目工地隆重举行。市委、市政府、保税区、濠江区及相关职能部门主要领导出席了启动仪式，市委书记陈良贤同志、副市长林广华同志、海关副关长刘红同志、国检局副局长陈泽明同志、康泽药业股份有限公司董事长杜炜龙先生，共同为本项目启动推杆，标志着本项目进入全面建设阶段。仪式上康泽药业股份有限公司董事长杜炜龙先生致辞，介绍项目基本情况并向各位领导、来宾、关心和支持本项目建设的各界朋友表示最衷心的感谢。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>27</text>  
+                  <text class='data-year'>2017.08</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>提升专业服务，打造金牌店长</view>
+                  <view class='news-text'>8月的空气，洋溢着青春气息，正像康泽年轻而富有朝气的店长管理团队！8月27日，由集团培训部联合辉瑞厂家共同组织的《金牌店长特训营》专场培训，在汕头金乐大酒店三楼迎宾厅举行。来自粤东、东莞、河源区域的连锁门店管理团队参与了此次培训，课程旨在从店长角色定位、门店管理技能及患者服务技巧的角度，提升学员们的综合管理素质。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>25</text>  
+                  <text class='data-year'>2017.08</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业连锁八角楼分店糖尿病讲座圆满结束</view>
+                  <view class='news-text'>康泽药业糖尿讲座在八角楼分店开讲啦，下面随小编一起来感受下课堂过程吧！在糖尿病患者到来之前，小伙伴们已经精心布置了会场，准备了糖尿病宣传资料。通俗易懂的宣传资料帮助患者认识糖尿病：现场迎宾，端茶倒水，搀扶老人，解答患者疑惑！会议现场体现康泽人满满的人文关怀！</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>1</text>  
+                  <text class='data-year'>2017.08</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>热烈祝贺康泽药业名列全国药品零售企业百强榜</view>
+                  <view class='news-text'>据国家商务部6月3日发布的《2015年药品流通行业运行统计分析报告》，披露了2015年药品批发企业、药品零售企业两份百强榜榜单，康泽药业（股票代码831397）名列药品零售企业百强榜！近年来，康泽药业秉承“康健大众、泽惠百姓”的经营宗旨和“专业、专心、专注”发展理念，深得广大消费者和各方面战略合作伙伴的支持与厚爱，企业快速发展壮大，得以在全国近5000家药品零售连锁企业、44.8万多家零售药店中脱颖而出，进入全国百强行列。康泽团队将以此为新起点，一如既往为广大消费者提供更加专业和优质服务；继续与各方面战略合作伙伴携手共进，努力构建多方共赢的发展格局，力争创造更好的社会效益和经济效益。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>13</text>  
+                  <text class='data-year'>2017.05</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>公司2017年户外拓展培训活动报道</view>
+                  <view class='news-text'>为提升和强化门店员工沟通能力、执行能力、增强责任心和团队凝聚力，帮助员工发掘个人潜能，提升勇于挑战自我的信心，公司于2017年5月13、14日组织粤东连锁管理中心、河源区域连锁门店管理人员和优秀员工分别于揭阳望天湖、东江野战俱乐部训练基地进行户外拓展培训活动。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>17</text>  
+                  <text class='data-year'>2017.03</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>【邀请函】康泽药业携手东阿阿胶巡演熬胶行动</view>
+                  <view class='news-text'>阿胶是女人的好伴侣，3月是女人节，亦是美容养颜的好时节。为了感恩回馈新老客户对康泽药业和东阿阿胶的厚爱。本次活动邀请康泽连锁优质会员到场。以熬胶形式孝敬父母，关爱爱人，呵护小孩，不仅体现孝道文化，传递温情，而且让消费者能辨别阿胶的真假，感受东阿阿胶的正宗地道。 活动亮点一 专业人士现场辨别阿胶真伪</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>18</text>  
+                  <text class='data-year'>2016.09</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业猛攻电子商务，意欲何为？</view>
+                  <view class='news-text'>在刚刚闭幕的第五届21’网上药房发展论坛上，康泽网上医药商城凭借在购物体验、咨询服务、品类丰富度、顾客反馈及购物安全保障等方面的综合优异表现，斩获“2015第五届中国医药电子商务十强”奖项。据了解，康泽网上医药商城是康泽药业股份有限公司（以下简称“康泽药业”，股票代码：831397）的医药电子商务综合平台，康泽药业发展电子商务的优势是什么？线上线下如何融合发展？带着这些疑问，本报记者专门走访了康泽药业股份有限公司董事、副总经理陈通锐。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>18</text>  
+                  <text class='data-year'>2016.07</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业：掘金电商不任性</view>
+                  <view class='news-text'>经过半年多的电商运营，康泽药业已取得不错的业绩，也看到了良好的发展势头。在这样的业绩面前，康泽药业董事、总经理许泽燕并不满足，她认为，医药电商的发展与兴起，为医药工业企业拓展了一个新的营销方式，如果真正把电商生意做起来，肯定不止是这个业绩。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>25</text>  
+                  <text class='data-year'>2016.03</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>【康泽药业】慢病管理专场培训报道</view>
+                  <view class='news-text'>随着我国经济的迅猛发展，人们的生活水平不断提高，生活节奏的加快，不良生活习惯和饮食结构导致我国的疾病谱也发生了巨大的变化。与此同时，人口老龄化程度也跟随经济的步伐逐步攀升。对于二十一世纪的现在，慢性病是老龄化社会疾病谱中占比越来越大的一个疾病类别，所以在零售连锁市场中，做好慢病管理势在必行，而我们康泽也是将“如何做好慢病管理”这一课题作为2016年的重点。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>5</text>  
+                  <text class='data-year'>2016.02</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业布局医药电商平台 扩张转板两不误</view>
+                  <view class='news-text'>3月8日，康泽药业（831397）公告，拟收购奥特药业不少于60%的股份，预计投资3600万，之后再增资2000万元。奥特药业是一家以中药、民族药生产经营为主的制药企业。而康泽药业属于流通药企，收购完成后，一定程度上是对后者业务板块的补充。同时，按照公告，康泽药业或有更为远大的图谋。2月26日，公司公告拟筹划重大事项，因相关事项尚存在不确定性，停牌至5月26日。而三天前的2月23日，公司表示，近日已向广东证监局提交了首次公开发行股票辅导备案登记材料，辅导期自2016年2月19日起开始计算。目前，公司正接受广发证券的辅导。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>20</text>  
+                  <text class='data-year'>2015.12</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>【公司】康泽药业——新三板中药品流通龙头</view>
+                  <view class='news-text'> 公司介绍 康泽药业股份有限公司成立于2003年，注册资本26247.60万元，注册地址在汕头市龙湖区。已创建直营零售连锁门店50多家，主要分布在汕头、澄海、梅州等大粤东区域，年销售营业收入已过亿元。 商业模式 公司是批发、零售、物流一体化，线上线下业务双驱动的医药电商企业，同时逐步向产业链上游医药制造、下游医疗服务延伸，致力打造全产业链的大健康平台，并最终发展为基于互联网的综合性医药经营企业。公司拥有品类合理齐全的产品资源体系和广泛的下游客户网络，以及电商批发（B2B）、电商零售（B2C）、零售连锁、市场调拨和临床配送全领域覆盖渠道优势，通过药品进销差价和流通环节再造、整合、增值来实现利润和价值提升。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>01</text>  
+                  <text class='data-year'>2015.10</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>【专题研讨】"沃土”新三板企业人才配置专题讨论</view>
+                  <view class='news-text'>前言2015年9月29日星期二晚上，由中科沃土基金董事长、新三板行业研究专家、广东省沃土企业成长研究院秘书长、广东中科招商副总裁朱为绎先生组织的“沃土新三板人才嫁接群”第七次线上专题讨论——“新三板企业人才配置专题讨论”圆满结束。本次讨论荣幸地邀请了广东中科招商副总裁朱为绎先生、伯朗特董事长尹荣造先生、达美盛董秘兰斌先生、康泽药业总经理许泽燕女士、广东中科招商人力总监谭敏华女士，五位嘉宾分别以自身企业发展实践和经验，给参与讨论的360位新三板挂牌企业高管和新三板人才围绕新三板董秘和财务总监等专业人才应具备哪些素质；新三板人才主要是公司内部培养还是外部招聘；如何留住和吸引新三板人才及其方法；外部招聘主要有哪些渠道等五大问题开展线上专题讨论。沃土团队将5位嘉宾发言分别编辑，以人才嫁接为主题制作成专题，分批分享给大家。</view>
+                </view>
+              </view>
+              
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>15</text>  
+                  <text class='data-year'>2015.08</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业拟募资2.5亿 用于发展医药电商物流配送中心及连锁药店业务</view>
+                  <view class='news-text'>本次股票发行拟发行的股份数量不超过1000万股，发行每股价格区间为18元-25元，拟募集资金总额不超过2.5亿元。2015年业绩预告显示，公司预计实现营业收入9.8亿-11亿元，比上年同期4.58亿元增长114%-140%；预计实现净利润4900万元–5300万元，比上年同期1593万元增长：208%-233%。</view>
+                </view>
+              </view>
+
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>15</text>  
+                  <text class='data-year'>2015.08</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业：电商助力升级跨越</view>
+                  <view class='news-text'>近康泽药业2003年成立，随着2014年登陆新三板并于2015年做市交易，凭借在市场调拨、临床配送、零售连锁及医药电商领域积累的经验，建立批零一体、线上线下一体的综合电商平台。公司如何实现从传统医药流通业务转型？如何以电商业务盈利？直播新三板记者专访了康泽药业董事、总经理徐泽燕。</view>
+                </view>
+              </view>
+
+            </view>
+          </scroll-view>
+        </swiper-item>
+
+
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(100%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+            <view class='company-news'>
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>27</text>  
+                  <text class='data-year'>2017.10</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>5年间，营业收入爆增约13倍，这家企业的发展简直逆天！</view>
+                  <view class='news-text'>倾听行业声音，还原行业轨迹，寻找行业榜样。自2017年4月起，中国药店官方微信独家推出“百大连锁药店巡访活动”，中国药店采编队伍深入企业进行实地访查并纪实撰写，受访对象还将同步进入“2017中国药店十大年度企业”候选榜。本次活动由中国药店杂志社主办、华润三九协办。本期我们走访的是康泽药业股份有限公司。2017年上半年，康泽药业股份有限公司（2014年12月2日“新三板”挂牌，NEEQ：831397）实现营业收入116660.29万元，较上年同期大幅提升70.02%。如果按此增幅简单框算，则其全年营收有望接近30亿元（2016年营收收入为173934.65万元）。回溯历史数据可以发现，该公司2012年时营业收入仅为22473.48万元。两相比较，差距高达约13倍。不信的话，可以对照图表1、图表2感受一下。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>20</text>  
+                  <text class='data-year'>2017.11</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业外延扩张再下一城 电商业务增长迅猛</view>
+                  <view class='news-text'>倾听行业声音，还原行业轨迹，寻找行业榜样。自2017年4月起，中国药店官方微信独家推出“百大连锁药店巡访活动”，中国药店采编队伍深入企业进行实地访查并纪实撰写，受访对象还将同步进入“2017中国药店十大年度企业”候选榜。本次活动由中国药店杂志社主办、华润三九协办。本期我们走访的是康泽药业股份有限公司。2017年上半年，康泽药业股份有限公司（2014年12月2日“新三板”挂牌，NEEQ：831397）实现营业收入116660.29万元，较上年同期大幅提升70.02%。如果按此增幅简单框算，则其全年营收有望接近30亿元（2016年营收收入为173934.65万元）。回溯历史数据可以发现，该公司2012年时营业收入仅为22473.48万元。两相比较，差距高达约13倍。不信的话，可以对照图表1、图表2感受一下。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>15</text>  
+                  <text class='data-year'>2017.1</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>惠普生与广东康泽药业连锁达成2017年战略合作</view>
+                  <view class='news-text'>近日，为促进双方可持续发展，按照“优势互补、互利共赢、长期合作”的原则，惠普生与广东康泽药业连锁有限公司达成了2017年战略合作协议。惠普生企业大学院长鞠荞泽先生，康泽采购总监徐军先生出席了本次签约仪式，双方表示将凭借各自在业内强大影响力及互补的资源优势，共同做大做强！据悉，康泽药业连锁将惠普生作为2017年膳食营养补充剂一类战略来重点打造；惠普生企业大学为康泽连锁“膳食营养补充剂”品类占比提升、品类人才培养模式提供专项咨询管理服务；同时结合实际情况和需求，帮助建立三级人才（新员工、班组长、店长）人才打造体系、品类目标管理体系等，以保障双方战略目标的达成。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>29</text>  
+                  <text class='data-year'>2015.12</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业股份有限公司 2015年年度业绩预告</view>
+                  <view class='news-text'>本公告于2015年12月29日发布于：全国中小企业股份转让系统官网 公告编号：2015-071 证券代码：831397 证券简称：康泽药业 主办券商：广发证券 康泽药业股份有限公司 2015年年度业绩预告 本公司及董事会全体成员保证公告内容的真实、准确和完整，没有虚假记载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承担个别及连带法律责任。 </view>
+                </view>
+              </view>
+
+
+            </view>
+          </scroll-view>
+        </swiper-item>
+
+
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(200%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>           
+            <view class='company-news'>
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>18</text>  
+                  <text class='data-year'>2017.8</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>“2016—2017年度中国药品零售企业综合竞争力排行榜”隆重揭晓！</view>
+                  <view class='news-text'>8月18日，在一年一度的西普会上，“2016-2017年度中国药品零售企业综合竞争力排行榜”隆重揭晓。从规模上来看，我国竞争力百强榜企业以不到2%的企业数量占据了全国药品零售市场的36.6%，达到1235亿元。从榜单变化来看，排名变化体现产业转型震荡。和2015-2016年的榜单相比，有28家企业名次下降，有10家企业掉出百强之外，在榜内名次下降幅度最大的企业下降了10位。在落榜企业中，有4家企业是因为在2016年被并购，报表合并到母公司。随着新上市、待上市企业的增加和其他资本的介入，并购之争愈发激烈，年销售规模2-10亿元、运营质量较优的连锁企业成为最抢手标的。而两亿元以下规模连锁也大多存在待价而沽的心态。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>10</text>  
+                  <text class='data-year'>2015.10</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>2015年中国医药电子商务10强诞生，康泽网上医药商城获此殊荣</view>
+                  <view class='news-text'>第5届21’网上药店发展论坛方案在厦门国际会议展览中心拉开序幕。来自全国的医药电商人才齐聚厦门，共议中国医药电子商务的未来发展之路。康泽网上医药商城、康爱多网上药店、壹药网等10家网上药店获得了“2015第五届中国医药电子商务10强”奖项。为鼓励医药电商在中国医药电商发展历经十个年头，面对下一个十年，在“互联网+”时代下。</view>
+                </view>
+              </view>
+
+            </view>          
+          </scroll-view>
+        </swiper-item>
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(300%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+            <view class='company-news'>
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>16</text>  
+                  <text class='data-year'>2017.7</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽下乡送健康，免费咨询暖人心</view>
+                  <view class='news-text'>康泽药业连锁有限公司成立于2000年，是康泽药业股份有限公司全资子公司，在粤东区域现有直营门店100多家，是粤东区域名列前茅的医药零售企业，同时也是粤东跨区域经营，并取得国家级网上药店经营资质的医药零售企业，在2015年进入全国药品零售百强企业。公司以“康健大众，泽惠百姓”为企业经营宗旨，始终秉承平价、保质就是硬道理的理念，为大众提供优质、优价的健康产品。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>09</text>  
+                  <text class='data-year'>2017.06</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>康泽药业连锁启动“斯利安天使行动”预防出生缺陷公益关爱行动项目</view>
+                  <view class='news-text'>你知道吗？每3-4秒的时间这个世界上就有1名带有先天性缺陷的新生儿出生到这个世界上，而他的出生带给他的家庭的只有痛苦。要怎么提前避免这种遗憾发生呢？预防胚胎细胞分裂异常、胚胎细胞发育畸形，备孕期、孕期女性补充叶酸很重要！“斯利安天使行动”是由北京斯利安药业于2011年启动开展的公益行动，为广大备孕期、孕期家庭免费提供叶酸产品，为新生儿缺陷的预防起到了举足轻重的效果。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>07</text>  
+                  <text class='data-year'>2017.06</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>2017高考，我们在行动～康泽药业连锁为高考学子保驾护航！</view>
+                  <view class='news-text'>2017年的高考即将来临，康泽药业连锁开始行动，为高考学子保驾护航！炎炎夏日，要注意防暑祛暑，特别是在这么重要的日子里，更需要以最好的状态来迎接高考。为此，康泽药业连锁携手北京同仁堂、石药集团等合作伙伴各高考学子免费提供防暑祛暑产品：石药琦效藿香正气合剂和北京同仁堂藿香正气丸（9袋装）。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>25</text>  
+                  <text class='data-year'>2017.03</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>关爱儿童安全用药，共建环保城市！康泽药业连锁携手三公仔发起免费过期药兑换公益活动</view>
+                  <view class='news-text'>一年一度的儿童过期药品免费兑换日又来啦！3月25日，康泽药业连锁广厦市场分店携手王老吉三公仔举行大型换药环保公益活动，以“关爱儿童安全用药，共建环保城市”为主题！活动当天，居民可将家中任何品牌的过期药品拿到康泽药业连锁广厦市场分店进行免费兑换。 换药手续非常方便 凡是属于王老吉药业生产的过期药品，均可按照最小包装1：1的比例兑换成三公仔小儿七星茶。</view>
+                </view>
+              </view>
+
+            </view>  
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>

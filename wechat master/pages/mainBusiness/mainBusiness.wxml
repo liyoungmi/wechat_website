@@ -1,0 +1,183 @@
+<!--pages/mainBusiness/mainBusiness.wxml-->
+<view class="scroll_box"> 
+    <scroll-view class="scroll-view_x"  scroll-x='true' style="width: auto;overflow:hidden;">
+      <view  class="item_list{{item == shopitem?'active':''}}" bindtap='bindshop' data-classify="{{item}}"  wx:for="{{list}}" data-index="{{index}}">
+        {{item}}
+      </view>          
+    </scroll-view>
+</view>
+<image class='aboutKZ-img' src='../../img/mainBanner/mainBanner.jpg'></image>
+<!-- 横向滚动联动 -->
+  <view class="detail">
+    <view class="content">
+      <view class="menu-container">
+        <scroll-view scroll-x="true" class="scroll-view" scroll-into-view="head-{{indexSize}}" style="width: auto;overflow:hidden;"> 
+              <view class="scroll-view-item {{indexSize === index?'active':''}}" wx:for="{{classData}}"  wx:for-item="item" wx:key="index" id="head-{{index}}"  bindtap="scrollTo" data-index="{{index}}">
+                  <image src="{{item.clickUrl}}" wx:if="{{imgindex!=index}}" class="slide-image"></image>
+                  <image src="{{item.image}}" wx:elif="{{imgindex==index}}" class="slide-image"></image>
+                  <text>{{item.title}}</text>
+              </view>             
+        </scroll-view>
+      </view>
+
+      <swiper indicator-dots='true' class="detail-container" bndchange="change" data-index="{{index}}" bindchange='onSlideChangeEnd' current="{{indexSize}}"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" style='height: 2800rpx;'>
+        <swiper-item style='postion: absolute;width: 100%;transform: transform(0%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+                <image class='KZ-company' src='../../img/mainBanner/company.png'></image>
+                <view class='mainBusinessclassify'>
+                   <view>
+                      <view class='mainBusinesstitle'>股份总公司</view>
+                      <image src='../../img/mainBanner/company07.jpg'></image>
+                      <view class='mainBusinesscompany'>康泽药业股份有限公司</view>
+                      <view class='mainBusinessaddress'>地址：广州市天河区中山大道西140号华港大厦1207号</view>
+                   </view>
+                   <view>
+                      <view class='mainBusinesstitle'>软件和信息技术服务</view>
+                      <image src='../../img/mainBanner/company09.jpg'></image>
+                      <view class='mainBusinesscompany'>广东搜扒药网络科技有限公司</view>
+                      <view class='mainBusinessaddress'>地址：广州市天河区中山大道西140号1207</view>
+                   </view>
+                   <view>
+                      <view class='mainBusinesstitle'>药品批发</view>
+                      <image src='../../img/mainBanner/company06.jpg'></image>
+                      <view class='mainBusinesscompany'>广州市昂泰药业有限公司</view>
+                      <view class='mainBusinessaddress'>地址：广州市天河区中山大道西140号华港大厦1207号</view>
+                   </view>
+                   <view>
+                      <view class='mainBusinesstitle'>粤东连锁</view>
+                      <image src='../../img/mainBanner/company01.jpg'></image>
+                      <view class='mainBusinesscompany'>康泽药业连锁有限公司</view>
+                      <view class='mainBusinessaddress'>地址：广东省汕头市龙湖区长江路96号康泽药业 连锁有限公司</view>
+                   </view>
+                   <view>
+                      <view class='mainBusinesstitle'>批发/连锁门店</view>
+                      <image src='../../img/mainBanner/company08.jpg'></image>
+                      <view class='mainBusinesscompany'>重庆玉马医药有限公司</view>
+                      <view class='mainBusinessaddress'>地址：重庆市南岸区茶园新区迎春路7号2栋第二层</view>
+                   </view>
+                   <view>
+                      <view class='mainBusinesstitle'>生产制药</view>
+                      <image src='../../img/mainBanner/company02.jpg'></image>
+                      <view class='mainBusinesscompany'>广东良济堂制药有限公司</view>
+                      <view class='mainBusinessaddress'>地址：广东省汕头市金平区鮀江街道叠金工业区 C3-4全座</view>
+                   </view>
+                   <view>
+                      <view class='mainBusinesstitle'>B2C电商</view>
+                      <image src='../../img/mainBanner/company05.jpg'></image>
+                      <view class='mainBusinesscompany'>康泽药业连锁有限公司广州分公司</view>
+                      <view class='mainBusinessaddress'>地址：广州天河区中山大道西140号华港商务大厦东塔23楼</view>
+                   </view>
+                   <view>
+                      <view class='mainBusinesstitle'>连锁门店</view>
+                      <image src='../../img/mainBanner/company03.jpg'></image>
+                      <view class='mainBusinesscompany'>东莞市康泽药业连锁有限公司</view>
+                      <view class='mainBusinessaddress'>地址：东莞市莞城区东城西路39号右侧鸿福大厦 康泽药店二楼</view>
+                   </view>
+                   <view>
+                      <view class='mainBusinesstitle'>连锁门店</view>
+                      <image src='../../img/mainBanner/company10.jpg'></image>
+                      <view class='mainBusinesscompany'>重庆康泽良济堂药房连锁有限公司</view>
+                      <view class='mainBusinessaddress'>地址：重庆市南岸区南滨路76号国际金融中心37层 4号</view>
+                   </view>
+                   <view>
+                      <view class='mainBusinesstitle'>中医诊所</view>
+                      <image src='../../img/mainBanner/company04.jpg'></image>
+                      <view class='mainBusinesscompany'>汕头市龙湖良济堂中医诊所有限公司</view>
+                      <view class='mainBusinessaddress'>地址：汕头市龙湖区金泰庄北区1幢南北座8、9幢 115</view>
+                   </view>
+                </view>
+          </scroll-view>
+        </swiper-item>
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(100%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+              <image class='process' src='../../img/mainBanner/process.png'></image>
+          </scroll-view>
+        </swiper-item>
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(200%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>           
+                <image class='topbar' src='../../img/mainBanner/topbar.png'></image>  
+                <view class='wholesale'>
+                    <view class='mainBannertext'>
+                      <view><icon class='blackSpot'></icon>  核心业务之批发</view>
+                      <view>批发业务覆盖的主要城市：重庆、广州、汕头，并辐射全国。</view>
+                    </view>
+                      <image class='part1' src='../../img/mainBanner/part1.png'></image>                     
+                </view> 
+                <view class='E-commerce'>
+                  <view class='mainBannertext'>
+                    <view><icon class='blackSpot'></icon> 核心业务之电商</view>
+                    <view>B2B：汕头，重庆两大电商基地</view>
+                    <view>B2C：广州</view>
+                  </view>
+                   <image class='part1' src='../../img/mainBanner/part2.png'></image> 
+                </view>  
+                <view class='chain'>
+                    <view class='mainBannertext'>
+                      <view><icon class='blackSpot'></icon> 核心业务之自营连锁门店</view>
+                      <view>公司共有连锁门店约200家</view>
+                    </view>
+                   <image class='part1' src='../../img/mainBanner/part3.png'></image> 
+                   <view class='Storefront'>
+                      <view>重庆市</view>
+                      <view>汕头市</view>
+                      <view>梅州市</view>
+                      <view>河源市</view>
+                      <view>东莞市</view>
+                      <view>广州市</view>
+                   </view> 
+                </view>    
+          </scroll-view>
+        </swiper-item>
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(300%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+               <view class="table" wx:if="{{ onlyText }}">
+                <view class="tr bg-w">
+                  <view class="th blank"></view>
+                  <view class="th store">门店信息</view>
+                  <view class="th address">地址</view>
+                </view>
+                <block wx:for="{{listData}}" wx:key="{{code}}">
+                  <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                    <view class="cd">{{item.code}}</view>
+                    <view class="td">{{item.text}}</view>
+                    <view class="yd">{{item.type}}</view>
+                  </view>
+                  <view class="tr" wx:else>
+                    <view class="cd">{{item.code}}</view>
+                    <view class="td">{{item.text}}</view>
+                    <view class="yd">{{item.type}}</view>
+                  </view>
+                </block>   
+              </view>
+              <view class="table" wx:else>
+                <view class="tr bg-w">
+                  <view class="th blank"></view>
+                  <view class="th store">门店信息</view>
+                  <view class="th address">地址</view>
+                </view>
+                <block wx:for="{{listData2}}" wx:key="{{code}}">
+                  <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                    <view class="cd">{{item.code}}</view>
+                    <view class="td">{{item.text}}</view>
+                    <view class="yd">{{item.type}}</view>
+                  </view>
+                  <view class="tr" wx:else>
+                    <view class="cd">{{item.code}}</view>
+                    <view class="td">{{item.text}}</view>
+                    <view class="yd">{{item.type}}</view>
+                  </view>
+                </block>              
+              </view>
+              <view class='button'>
+                <button  bindtap="pagination">1</button>
+                <button  bindtap="pagination">2</button>
+              </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>

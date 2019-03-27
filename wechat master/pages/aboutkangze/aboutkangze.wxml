@@ -1,0 +1,85 @@
+<!--pages/aboutkangze/aboutkangze.wxml-->
+<view class="scroll_box"> 
+    <scroll-view class="scroll-view_x"  scroll-x='true' style="width: auto;overflow:hidden;">
+      <view  class="item_list{{item == shopitem?'active':''}}" bindtap='bindshop' data-classify="{{item}}"  wx:for="{{list}}" data-index="{{index}}">
+        {{item}}
+      </view>          
+    </scroll-view>
+  </view>
+<image class='aboutKZ-img' src='../../img/aboutKZ/aboutKzBanner.jpg'></image>
+
+<!-- 横向滚动联动 -->
+  <view class="detail">
+    <view class="content">
+      <view class="menu-container">
+        <scroll-view scroll-x="true" class="scroll-view" scroll-into-view="head-{{indexSize}}" style="width: auto;overflow:hidden;"> 
+              <view class="scroll-view-item {{indexSize === index?'active':''}}" wx:for="{{classData}}"  wx:for-item="item" wx:key="index" id="head-{{index}}"  bindtap="scrollTo" data-index="{{index}}">
+                  <image src="{{item.clickUrl}}" wx:if="{{imgindex==index}}" class="slide-image"></image>
+                  <image src="{{item.image}}" wx:elif="{{imgindex!=index}}" class="slide-image"></image>
+                  <text>{{item.title}}</text>
+              </view>             
+        </scroll-view>
+      </view>
+
+      <swiper indicator-dots='true' class="detail-container" bndchange="change" data-index="{{index}}" bindchange='onSlideChangeEnd' current="{{indexSize}}"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" >
+        <swiper-item style='postion: absolute;width: 100%;height: 100%; transform: transform(0%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+          <view class='talentdevelopment-bg'>
+                <image class='brandManagement' src='../../img/aboutKZ/aboutPic.jpg'></image>
+                <text>康泽药业连锁有限公司是康泽药业股份有限公司的全资子公司，成立于2006年，是一家基于互联网的批零一体化、线上线下一体化的综合性医药企业。\n</text>
+                <text class='aboutPic-text'>公司旗下有两大品牌，“康泽”和“良济堂”。康泽品牌专注于医药流通，业务涵盖了医药电商、零售连锁、批发配送等流通全产业链。良济堂将专注于医药产品及医疗服务。公司将利用现有的渠道及产品资源优势，结合当前医药电商的发展趋势，致力于打造基于互联网服务的大健康产业平台。\n</text> 
+                <text class='aboutPic-text'>公司传统批发业务、电商批发业务和电商零售业务均立足广东，覆盖全国。零售连锁实体门店主要分布于广东和重庆区域，并逐步向周边区域扩展。良济堂制药专注贵细参茸和中成药的生产，以保证各业务板块的产品供应，确保产品的质量。 \n</text>
+                <text class='aboutPic-text'>公司在2012年取得粤东首份医药零售电商资格证书，2013年取得医药批发电商资格证书，成为广东省唯一一家同时持有电商批发和电商零售双证的医药流通企业。2014年，公司成为京东医药城“粤东区域独家合作商”在天猫商城开设公司品牌的大药房旗舰店。零售电商方面，公司坚持以药品销量为主，专业专注的经营理念，2015年6月，取得药品品类在天猫医药馆全国排名第四，综合排名第12的成绩。同时，成为阿里健康和广东省网络医院粤东唯一指定合作商。\n</text>
+                <text class='aboutPic-text'>公司的经营理念：不断强化电商业务，平衡各业务板块的协同发展，坚持基于互联网的批零一体化、线上线下一体化的业务模式，积极扩展和参与上下游的业务，不断强化和提升全产业链价值。\n</text>
+                <text class='aboutPic-text'>公司的发展思路：科学治理、突出专业、稳健发展。公司整个管理团队均具备专业学习和工作背景，创立10多年来，均实行所有版权和管理权分离的法人治理结构，严格执行行业规范化管理，确保产品质量和服务质量，从而保障公司稳健发展。\n</text>
+          </view>
+          </scroll-view>
+        </swiper-item>
+
+
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(100%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+          <view class='process'>
+              <image src='../../img/aboutKZ/process.png'></image>
+          </view>
+          </scroll-view>
+        </swiper-item>
+
+
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(200%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>           
+                <view class='detail_img'>
+                  <view class='view_img' wx:for="{{imglist}}" wx:for-item="item">
+                    <image src='{{item.image}}' data-src="{{image}}" bindtap="previewImage"></image>
+                    <view class='view_bottom'>{{item.title}}</view>
+                  </view>
+                </view>            
+          </scroll-view>
+        </swiper-item>
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(300%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+           <view class='customerService'>
+                <image class='customerService-icons' src='../../img/aboutKZ/oicon_01_06.png'></image>
+                <text class='customerService-title'>康泽使命</text>
+                <view>康健大众，泽惠百姓。</view>
+              </view>
+              <view class='customerService'>
+                <image class='customerService-icons' src='../../img/aboutKZ/oicon_01_10.png'></image>
+                <text class='customerService-title'>康泽愿景</text>
+                <view>致力打造健康产业链的整合和价值提升平台。</view>
+              </view>
+              <view class='customerService'>
+                <image class='customerService-icons' src='../../img/aboutKZ/oicon_01_17.png'></image>
+                <text class='customerService-title'>康泽经营理念 </text>
+                <view>不断强化电商业务，平衡各业务板块的协同发展，坚持基于互联网的批零一体化，
+              线上线下一体化的业务模式，积极扩展和参与上下游的业务，不断强化和提升全产业链价值。</view>
+              </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>

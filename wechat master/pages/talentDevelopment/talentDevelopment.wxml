@@ -1,0 +1,157 @@
+<!--pages/talentDevelopment/talentDevelopment.wxml-->
+<view class="scroll_box"> 
+    <scroll-view class="scroll-view_x"  scroll-x='true' style="width: auto;overflow:hidden;">
+      <view  class="item_list{{item == shopitem?'active':''}}" bindtap='bindshop' data-classify="{{item}}"  wx:for="{{list}}" data-index="{{index}}">
+        {{item}}
+      </view>           
+    </scroll-view>
+  </view>
+<image class='aboutKZ-img' src='../../img/talentDevelopment/developBanner.jpg'></image>
+<!-- 横向滚动联动 -->
+  <view class="detail">
+    <view class="content">
+      <view class="menu-container">
+        <scroll-view scroll-x="true" class="scroll-view" scroll-into-view="head-{{indexSize}}" style="width: auto;overflow:hidden;"> 
+              <view class="scroll-view-item {{indexSize === index?'active':''}}" wx:for="{{classData}}"  wx:for-item="item" wx:key="index" id="head-{{index}}"  bindtap="scrollTo" data-index="{{index}}">
+                  <image src="{{item.clickUrl}}" wx:if="{{imgindex!=index}}" class="slide-image"></image>
+                  <image src="{{item.image}}" wx:elif="{{imgindex==index}}" class="slide-image"></image>
+                  <text>{{item.title}}</text>
+              </view>             
+        </scroll-view>
+      </view>
+
+      <swiper indicator-dots='true' class="detail-container" bndchange="change" data-index="{{index}}" bindchange='onSlideChangeEnd' current="{{indexSize}}"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" style='height: 3250rpx;'>
+        <swiper-item style='postion: absolute;width: 100%;transform: transform(0%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+          <view class='talentdevelopment-bg'>
+               <image class='brandManagement' src='../../img/talentDevelopment/01.jpg'></image>
+               <text>康泽药业致力于内部人才培育，构筑通畅的员工晋升通道，建立健全培训体系，设立了康泽培训学院，秉承“育康泽人，筑健康梦！”的办学理念重视每一位员工的成长，致力为员工提供系统化、专业化培训，为员工的职业发展提供了良好成长空间。\n</text>
+               <text>康泽培训学院遵循系统性、制度化原则，按需培训、学以致用、讲求实效，常设中高层管理人员培训班、店长初/中/高阶成长培训班、各类专业课程培训班，并根据企业发展目标、发展动态、员工发展的不同阶段，不断更新、增设各类课程，不断壮大师资力量，并重金聘请专家进行授课和指导。在提高员工个人素质的同时，不断培养从基层成长起来的管理人员，提升企业团队的整体协作水平，为企业的长远发展奠定了扎实的基础。\n</text>
+               <text>今天，康泽药业看到人才的价值正转化为无尽的潜力，今天，康泽药业看到团队的价值正创造着未来的无限可能。康泽人必将全力以赴、矢志不渝，为人们的生命健康事业做出更强有力的贡献。\n</text>
+               <view class='title'>"育康泽人，筑健康梦!"\n</view>
+               <text>今天的康泽处于高速发展阶段，拥有强劲的品牌综合竞争力，优越的经营运作发展平台。现诚邀社会各界人才和各大中院校应届优秀实 习生及毕业生加盟，为公司的持续发展提供稳定的人才保障。</text>
+               <text>在康泽的团队里，每一个康泽人都能收获全方位的事业支持！\n</text>
+               <text>来康泽，与康泽共成长！\n</text> 
+          </view>
+          <view class='talentdevelopment-icon'>
+               <view>
+                  <image class='recruitment-bg' src='../../img/talentDevelopment/society.png'></image>
+                  <image class='recruitment-icon' src='../../img/talentDevelopment/icons04.png'></image>
+                  <text>社会招聘</text>
+               </view>
+               <view>
+                  <image class='recruitment-bg' src='../../img/talentDevelopment/school.png'></image>
+                  <image class='recruitment-icon' src='../../img/talentDevelopment/icons05.png'></image>
+                  <text>校园招聘</text>
+               </view>
+          </view>
+          </scroll-view>
+        </swiper-item>
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(100%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+            <view class='company-news'>
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>27</text>  
+                  <text class='data-year'>2017.08</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>提升专业服务，打造金牌店长</view>
+                  <view class='news-text'>8月的空气，洋溢着青春气息，正像康泽年轻而富有朝气的店长管理团队！8月27日，由集团培训部联合辉瑞厂家共同组织的《金牌店长特训营》专场培训，在汕头金乐大酒店三楼迎宾厅举行。来自粤东、东莞、河源区域的连锁门店管理团队参与了此次培训，课程旨在从店长角色定位、门店管理技能及患者服务技巧的角度，提升学员们的综合管理素质。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>20</text>  
+                  <text class='data-year'>2017.11</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>《非财》&《非人》管理提升培训报道</view>
+                  <view class='news-text'>11月18-19日，康泽药业针对中高层管理人员和储备干部开展了为期两天的《非财务经理的财务管理》&《非人力资源经理的人力资源管理》专场培训，此次培训得到康恩贝集团浙江英诺珐医药有限公司的大力支持和赞助。</view>
+                </view>
+              </view>
+
+              <view class='news-list'>
+                <view class='news-data'>
+                  <text class='data-day'>13</text>  
+                  <text class='data-year'>2017.05</text>
+                </view>
+                <view class='news-content'>
+                  <view class='news-title'>公司2017年户外拓展培训活动报道</view>
+                  <view class='news-text'>为提升和强化门店员工沟通能力、执行能力、增强责任心和团队凝聚力，帮助员工发掘个人潜能，提升勇于挑战自我的信心，公司于2017年5月13、14日组织粤东连锁管理中心、河源区域连锁门店管理人员和优秀员工分别于揭阳望天湖、东江野战俱乐部训练基地进行户外拓展培训活动。</view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+
+        <swiper-item style='postion: absolute;width: 100%;height: 100%;transform: transform(200%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'> 
+              <view class='customerService'>
+                <image class='customerService-icons' src='../../img/talentDevelopment/icons06.png'></image>
+                <text class='customerService-title'>天猫药师客服</text>
+                <view>
+                   <view class='claim'>岗位职责:</view>
+                   <text>1、负责接待客户，对客户咨询的相关问题进行解答；\n</text>
+                   <text>2、通过电话、网络平台等方式为客户提供优质的药师服务，解决客户问题；\n</text>
+                   <text>3、收集顾客信息和顾客意见，对公司形象提升提出参考意见；\n</text>
+                   <text>4、了解并熟练药品知识，用药情况；\n</text>
+                   <text>5、完成主管指定的其它相关工作。\n</text>
+                </view>
+                <view>
+                   <view class='claim'>任职要求:</view> 
+                   <text>1、中专及以上学历，药学相关专业毕业；\n</text>
+                   <text>2、有药店、药品从业经验优先考虑；\n</text>
+                   <text>3、逻辑思维敏捷，普通话标准，口齿清晰，语言流畅；心态平和，对待客户热心，有较强的亲和力和理解力；\n</text>
+                   <text>4、能接受早晚班（三班，8：00-16：00； 13：00-21：00；15：00-23：00）；\n</text>
+                   <text>5、能够熟练应用OFFICE办公软件以及互联网知识。\n</text>
+                </view>
+              </view>
+              <view class='customerService'>
+                <image class='customerService-icons' src='../../img/talentDevelopment/icons07.png'></image>
+                <text class='customerService-title'>天猫设计师</text>
+                <view>
+                   <view class='claim'>岗位职责:</view>
+                   <text>1、负责天猫旗舰店首页设计、改版、更新、维护等美术创意制作工作；\n</text>
+                   <text>2、负责专题、专场等要求制作各种不同类型的美工作品；\n</text>
+                   <text>3、负责广告图、海报图进行设计、编辑、美化等工作；\n</text>
+                   <text>4、负责产品详情设计；\n</text>
+                   <text>5、富有创造力和激情，对线上购物图片有敏感度，设计思路清晰；\n</text>
+                   <text>6、完成公司交办的其他事务。</text>
+                </view>
+                <view>
+                   <view class='claim'>任职要求:</view> 
+                   <text>1、广告学、美术、平面设计相关专业，学历不限，能力要比学历重；\n</text>
+                   <text>2、1-2年以上相关工作经验，有一定的中文文字功底和策划能力；\n</text>
+                   <text>3、熟练掌握Flash、Dreamweaver、Photoshop等设计软件；\n</text>
+                   <text>4、优秀的职业素质，有较强的逻辑思维能力，能够独立构建网站设计规范框架体系；\n</text>
+                   <text>5、具备优秀的天猫旗舰店整体策划、设计能力，有丰富的网页设计经验；\n</text>
+                   <text>6、具有深厚的美术功底及良好的创意构思能力，很好把握视觉色彩与网站布局，思想敏锐活跃，具有丰富的视觉创作经验和独到的审美修养；\n</text>
+                   <text>7、具有较强的责任心、执行力、工作协调能力；良好的团队合作精神。</text>
+                </view>
+              </view>
+              <view class='customerService'>
+                <image class='customerService-icons' src='../../img/talentDevelopment/icons08.png'></image>
+                <text class='customerService-title'>业务员</text>
+                <view>
+                   <view class='claim'>岗位职责:</view>
+                   <text>1、负责公司代理医药产品在批发市场（商业公司/企业、终端客户/药店/医院等）的销售工作；\n</text>
+                   <text>2、负责销售渠道的开拓并维护；\n</text>
+                   <text>3、建立客户档案，完成相关日常性销售报表，及时提供市场反馈信息并做出适当建议；\n</text>
+                   <text>4、与客户建立良好关系，保持公司形象。\n</text>
+                </view>
+                <view>
+                   <view class='claim'>任职要求:</view> 
+                   <text>1、大专以上学历；\n</text>
+                   <text>2、1年以上医药行业销售或医院、商业公司/企业/药店/医院的业务经验；优秀药学专业毕业生可考虑；\n</text>
+                   <text>3、拥有相关市场资源者优先。\n</text>
+                </view>
+              </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>

@@ -1,0 +1,210 @@
+<!--index.wxml-->
+<view class="container">
+   <view class="search-text">
+        <view class='classify-text' bindtap='toclassify'>
+          <image class='oicon_classify' src='../../img/oicon_classify.png'></image>
+          <view class='oicon_class'>分类</view>
+        </view>
+
+        <view class='search-box'>
+          <input class="search-input" placeholder="买药！就来康泽微商城！" value="{{value}}" bindinput="searchInput" />
+          <view class='search-ss'>
+            <image class='search-grass' src='../../img/search.png'></image>
+            <input class="search-button" placeholder="搜索" value="{{value}}" bindinput="searchInput" />
+          </view>
+        </view> 
+  </view>
+   <swiper class='swiper' indicator-dots='true' autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+          <navigator url="/pages/goodslist/goodslist?id={{item.id}}" class="goodslist">  
+            <swiper-item>
+                <image src="{{item.imglist}}" class="slide-image" width="100%"/>
+            </swiper-item>
+          </navigator>
+        </block>
+    </swiper>
+    <view class='nav'>
+      <view class='nav-list'>
+        <navigator bindtap='toclassify'>
+          <image class='nav01 nav-img' src='../../img/nav01.png'></image>
+          <view>帮你找药</view>
+        </navigator>
+        <navigator  bindtap='toclassify'> 
+          <image class='nav02 nav-img' src='../../img/nav02.png'></image>
+          <view>慢性病</view>
+        </navigator>
+        <navigator  url="../homeuse/homeuse">
+          <image class='nav03 nav-img' src='../../img/nav03.png'></image>
+          <view>家庭常备</view>
+        </navigator>
+        <navigator  url="../liangjitan/liangjitan">
+          <image class='nav04 nav-img' src='../../img/nav04.png'></image>
+          <view>良济堂滋补</view>
+        </navigator>
+        <navigator  bindtap='toprofile'>
+          <image class='nav05 nav-img' src='../../img/nav05.png'></image>
+          <view>会员中心</view>
+        </navigator>
+        <navigator  bindtap='tobuy'>
+          <image class='nav06 nav-img' src='../../img/nav06.png'></image>
+          <view>购物车</view>
+        </navigator>
+        <navigator  url="">
+          <image class='nav07 nav-img' src='../../img/nav07.png'></image>
+          <view>联系客服</view>
+        </navigator>
+        <navigator  url="../companyProfile/companyProfile">
+          <image class='nav08 nav-img' src='../../img/nav08.png'></image>
+          <view>公司简介</view>
+        </navigator>
+      </view>
+    </view>
+    <!--倒计时  -->
+    <view class='time-countDown'>
+      <view class='time-offer'><text>优惠专区</text>距离结束还剩</view>
+      <view class="countDownTimeView countDownAllView" >
+        <view class="voteText countDownTimeText">{{countDownDay}}</view>天
+        <view class="voteText countDownTimeText">{{countDownHour}}</view>时
+        <view class="voteText countDownTimeText">{{countDownMinute}}</view>分
+        <view class="voteText countDownTimeText voteText-red">{{countDownSecond}}</view>秒
+      </view>
+    </view>
+    <!-- 轮播图 -->
+    <view class='swiper-img'>
+      <swiper class='swiper swiperthree'  autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true" style='width:30%;'>
+          <block wx:for="{{imgUrl}}" wx:key="{{index}}">
+              <swiper-item>       
+                  <image src="{{item.imgOne}}" class="slide-img" width="30%"/> 
+                  <view class='swiper-price'>
+                    <text>￥{{item.price}}</text>
+                    <text>￥{{item.oldprice}}</text>
+                  </view>
+                  <view class='swiper-textOne'>{{item.textOne}}</view>              
+              </swiper-item>
+          </block>
+      </swiper>
+      <swiper class='swiper swiperthree'  autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true" style='width:30%;'>
+          <block wx:for="{{imgUrlOne}}" wx:key="{{index}}">
+              <swiper-item>                 
+                  <image src="{{item.imgTwo}}" class="slide-img" width="30%"/>
+                  <view class='swiper-price'>
+                    <text>￥{{item.price}}</text>
+                    <text>￥{{item.oldprice}}</text>
+                  </view>
+                  <view class='swiper-textOne'>{{item.textTwo}}</view>
+              </swiper-item>
+          </block>
+      </swiper>
+      <swiper class='swiper swiperthree'  autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true" style='width:30%;'>
+          <block wx:for="{{imgUrlTwo}}" wx:key="{{index}}">
+              <swiper-item>                 
+                  <image src="{{item.imgThree}}" class="slide-img" width="30%"/>
+                  <view class='swiper-price'>
+                    <text>￥{{item.price}}</text>
+                    <text>￥{{item.oldprice}}</text>
+                  </view>
+                  <view class='swiper-textOne'>{{item.textThree}}</view>
+              </swiper-item>
+          </block>
+      </swiper>
+    </view>
+    <!-- 健康大讲堂 -->
+    <view class='health-lecture'>
+      <view>健康大讲堂</view>
+      <text>LECTURE HALL</text>   
+      <image src='../../images/banner/health-lecture.jpg'></image>
+    </view>
+    <!-- 热门科室 -->
+    <view class='depart-ment'>
+      <view>热门科室</view>
+      <text>DEPART MENT</text>
+      <view class='depart'>
+        <view class='depart-images depart-color01'>        
+            <view>
+              <view class='depart-text'>家庭常备</view>
+              <text>感冒发烧/消化不良</text>
+            </view>
+            <image src='../../img/07.png'></image>        
+        </view>
+        <view class='depart-images depart-color02'>        
+            <view>
+              <view class='depart-text'>肝胆科</view>
+              <text>乙肝/保肝护肝</text>
+            </view>
+            <image src='../../img/08.png'></image>        
+        </view>
+        <view class='depart-images depart-color03'>        
+            <view>
+              <view class='depart-text'>心脑血管科</view>
+              <text>感冒发烧/消化不良</text>
+            </view>
+            <image src='../../img/09.png'></image>
+        </view>
+        <view class='depart-images depart-color04'>        
+            <view>
+              <view class='depart-text'>医疗机械</view>
+              <text>血糖仪/血压计</text>
+            </view>
+            <image src='../../img/10.png'></image>
+        </view>
+        <view class='depart-images depart-color05'>        
+            <view>
+              <view class='depart-text'>神经科</view>
+              <text>癫痫/帕金森</text>
+            </view>
+            <image src='../../img/11.png'></image>
+        </view>
+        <view class='depart-images depart-color06'>        
+            <view>
+              <view class='depart-text'>传统滋补</view>
+              <text>西洋参/阿胶/花茶</text>
+            </view>
+            <image src='../../img/12.png'></image>
+        </view>
+      </view>
+    </view>
+    <!-- 猜你喜欢 -->
+    <view class='hot-list'>
+      <view class='hot-text'>
+        <view>猜你喜欢</view>
+        <text>HOT LIST</text>
+      </view>
+      <view class='hotGoods-list'>
+        <navigator url="../intobuy/intobuy">
+        <view class='hotGoods'>
+          <image src='../../img/6902809001.jpg'></image>
+          <view class='hotGoods-text'>￥790.00<text>￥948.00</text></view>        
+          <view>同溢堂 益安宁丸 112s*3瓶</view>
+        </view>
+        </navigator>
+        <view class='hotGoods'>
+          <image src='../../img/4730293001.jpg'></image>
+          <view class='hotGoods-text'>￥69.00<text>￥88.00</text></view>        
+          <view>太极 补肾益寿胶囊 0.3g*60粒</view>
+        </view>
+        <view class='hotGoods'>
+          <image src='../../img/150807090149.jpg'></image>
+          <view class='hotGoods-text'>￥39.00<text>￥50.00</text></view>        
+          <view>腾药 鱼鳔补肾丸 6g*12袋</view>
+        </view>
+        <view class='hotGoods'>
+          <image src='../../img/170713146855.jpg'></image>
+          <view class='hotGoods-text'>￥295.00<text>￥358.00</text></view>        
+          <view>养无极 补肺丸 9g*10丸*4板</view>
+        </view>
+        <view class='hotGoods hotGoods-other'>
+          <image src='../../img/8317131001.jpg'></image>
+          <view class='hotGoods-text'>￥21.00<text>￥27.00</text></view>        
+          <view>天草 丹参保心茶 2.5g*180袋</view>
+        </view>
+        <view class='hotGoods hotGoods-other'>
+          <image src='../../img/4632732001.jpg'></image>
+          <view class='hotGoods-text'>￥79.00<text>￥102.00</text></view>        
+          <view>百年丹 固本延龄丸 9g*18s</view>
+        </view>
+      </view>
+    </view>
+
+    <image class='icon-advisory' src='../../img/icon.png'></image>
+</view>
+

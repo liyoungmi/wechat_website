@@ -1,0 +1,45 @@
+<!--pages/brandManagement/brandManagement.wxml-->
+<view class="scroll_box"> 
+    <scroll-view class="scroll-view_x"  scroll-x='true' style="width: auto;overflow:hidden;">
+      <view  class="item_list{{item == shopitem?'active':''}}" bindtap='bindshop' data-classify="{{item}}"  wx:for="{{list}}" data-index="{{index}}">
+        {{item}}
+      </view>          
+    </scroll-view>
+  </view>
+  <image class='aboutKZ-img' src='../../img/brandManagement/brandBanner.jpg'></image>
+<!-- 横向滚动联动 -->
+  <view class="detail">
+    <view class="content">
+      <view class="menu-container">
+        <scroll-view scroll-x="true" class="scroll-view" scroll-into-view="head-{{indexSize}}" style="width: auto;overflow:hidden;"> 
+              <view class="scroll-view-item {{indexSize === index?'active':''}}" wx:for="{{classData}}"  wx:for-item="item" wx:key="index" id="head-{{index}}"  bindtap="scrollTo" data-index="{{index}}">
+                  <image src="{{item.image}}" class="slide-image" />
+                  <text>{{item.title}}</text>
+              </view>             
+        </scroll-view>
+      </view>
+
+      <swiper indicator-dots='true' class="detail-container" bndchange="change" data-index="{{index}}" bindchange='onSlideChangeEnd' current="{{indexSize}}"
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" style='height: 2500rpx;'>
+        <swiper-item style='postion: absolute;width: 100%;transform: transform(0%, 0px) translate(0px);'>
+          <scroll-view class='market-scroll-list' scroll-y='true'>
+               <image class='brandManagement' src='../../img/brandManagement/01.jpg'></image>
+               <view class='liangjitang'>良济堂\n</view>
+               <text>广东良济堂制药有限公司，坐落于岭东门户、华南要冲、海滨邹鲁、美食之乡汕头，于2011年03月04日成立，是一家以中药材研发及制作为主业的公司。\n</text>
+               <text>公司坚持4C控制系统，打造中药饮片的核心价值：\n</text>
+               <text>源头(R)：对生产源头的环境进行严格监控，所用中药材均产自GAP基地或道地产区。\n</text>
+               <text>过程(P)：采用科学合理的采收加工技术，生产过程严格执行范要求，过程管理可追溯。\n</text>
+               <text>质量(Q)：采用多种优于《中国药典》的质量控制方法，特别是采用中药指纹图谱方法，进行更全面的产品质量控铟，达到中药材及中药饮片产品质量稳定、可控。\n</text>
+               <text>安全性(s)：按照规定标准，对重金属和有害元素、农药残留、二氧化硫残留、染色剂等执行高于《中国药典》的限控标准，保证中药饮片产品的安全性。\n</text>
+               <text>其经营范围包括生产中饮片（净制、切制、炒制、蒸制、炙制）等，深受大众的信任和欢迎。\n</text> 
+          </scroll-view>
+        </swiper-item>
+
+      </swiper>
+    </view>
+  </view>
+
+
+
+
+

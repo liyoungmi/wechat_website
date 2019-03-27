@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classify/classify",
+    "pages/buy/buy",
+    "pages/profile/profile",
+    "pages/logs/logs",
+    "pages/goodslist/goodslist",
+    "pages/homeuse/homeuse",
+    "pages/liangjitan/liangjitan",
+    "pages/intobuy/intobuy",
+    "pages/search/search",
+    "pages/registered/registered",
+    "pages/forget/forget",
+    "pages/companyProfile/companyProfile",
+    "pages/aboutkangze/aboutkangze",
+    "pages/newsCenter/newsCenter",
+    "pages/mainBusiness/mainBusiness",
+    "pages/brandManagement/brandManagement",
+    "pages/talentDevelopment/talentDevelopment",
+    "pages/communicationCenter/communicationCenter"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "康泽大药房",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#BEBEBE",
+    "selectedColor": "#3366cc",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "商城首页",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home-selected.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "img/classify.png",
+        "selectedIconPath": "img/classify-selected.png"
+      },
+      {
+        "pagePath": "pages/buy/buy",
+        "text": "购物车",
+        "iconPath": "img/buy.png",
+        "selectedIconPath": "img/buy-selected.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心",
+        "iconPath": "img/profile.png",
+        "selectedIconPath": "img/profile-selected.png"
+      }
+    ]
+  }
+}

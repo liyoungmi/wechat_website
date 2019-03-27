@@ -1,0 +1,200 @@
+/* pages/talentDevelopment/talentDevelopment.wxss */
+page{
+  background-color: #f5f5f5; 
+}
+.scroll_box{
+width: 100%;
+height: 100rpx;
+overflow: hidden;
+background: #1d2087;
+white-space: nowrap;
+position: fixed;
+top: 0;
+z-index: 1;
+}
+.item_list{
+width: 160rpx;
+height: 100rpx;
+text-align: center;
+line-height: 100rpx;
+margin-right: 23rpx;
+color: #fff;
+display: inline-block;
+}
+.item_listactive{
+  width: 160rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin-right: 23rpx;
+  color: #ffff00;
+  display: inline-block;
+}
+.aboutKZ-img{
+  width: 100%;
+  height: 400rpx;
+}
+.menu-container{
+  width: 100%;
+  white-space: nowrap;
+  height: 100rpx;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 5rpx auto 20rpx auto;
+}
+.scroll-view image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.scroll-view{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  font-size: 38rpx;
+  width: 250rpx;
+  margin: 0 auto;
+  display:inline-block;
+  line-height: 100rpx; 
+  position: relative;
+  border-left: 1rpx solid #e5e5e5;
+}
+.scroll-view .active{
+  color: #212489;
+}
+.scroll-view-item>image{
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+.scroll-view-item>text{
+  margin-left: 70rpx;
+}
+.talentdevelopment-bg{
+  background-color: #fff;
+}
+.brandManagement{
+  float:left;
+  width: 500rpx;
+  height: 340rpx;
+}
+.market-scroll-list text{
+  font-size: 24rpx;
+  margin-left: 60rpx;
+}
+.title{
+  font-size: 40rpx;
+  font-weight: 900;
+  color: #1d2087;
+  text-align: center;
+}
+.talentdevelopment-icon{
+  display: flex;
+  flex-direction: row;
+}
+.talentdevelopment-icon>view{
+  position: relative;
+  margin: 40rpx 0 0 50rpx;
+}
+.recruitment-bg{
+  width: 300rpx;
+  height: 100rpx;
+}
+.recruitment-icon{
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  top: 15rpx;
+  left:50rpx;
+}
+.talentdevelopment-icon text{
+  font-size: 32rpx;
+  color: #fff;
+  position: absolute;
+  top: 20rpx;
+  left:75rpx;
+}
+.news-list{
+    height: 180rpx;
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+}
+.news-data{
+  width: 200rpx;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: column;
+}
+.data-day{
+  font-size: 58rpx;
+  color: #1d2087;
+  width: 150rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  background-color: #e0e0e0;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  text-align: center;
+   text-indent: 0rpx;
+}
+.data-year{
+  font-size: 28rpx;
+  height: 40rpx;
+  width: 150rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  background-color:#1d2087; 
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+   text-indent: 0rpx;
+}
+.news-content{
+  width: 600rpx;
+  height: 100%;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.news-title{
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  color: #1d2087;
+  font-size: 32rpx;
+  text-indent: 0rpx;
+}
+.news-text{
+  width: 100%;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 24rpx;
+  text-indent: 0rpx;
+}
+.company-news text{
+  margin-left: 0rpx;
+}
+.customerService{
+  border-bottom: 2rpx solid #cfd9e4;
+  background-color: #fff;
+}
+.customerService-icons{
+  width: 60rpx;
+  height: 55rpx;
+  margin-left: 40rpx;
+}
+.market-scroll-list .customerService-title{
+  font-size: 36rpx;
+  font-weight: 900;
+  color: #1d2087;
+  margin-left: 0rpx;
+}
+.claim{
+  margin-left: 50rpx;
+  color: #ffa200;
+  font-size: 32rpx;
+}
